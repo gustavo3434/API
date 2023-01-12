@@ -169,6 +169,7 @@ const agregarACarrito = (id) =>{ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
         .then((res) => res.json())
         .then((data) => {
             let productoEncontrado = data.find(prod => prod.id === parseInt(id))
+            console.log(data)
         }); 
     if(productosCarrito.some((el) => el.id == productoEncontrado.id)){
         productosCarrito.map(el => el.cantidad += 1)
