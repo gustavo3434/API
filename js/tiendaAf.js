@@ -63,7 +63,8 @@ fetch("./data.json")
   .then((res) => res.json())
   .then((data) => {
     data.forEach((producto) => {
-      contenedorMujer.innerHTML = 
+        console.log(producto)
+        contenedorMujer.innerHTML = 
             `<div class="contenedor" id="espacio">
                 <button type="button" id="${producto.id}" class="agregar btn btn-dark btn-sm">+</button>
                 <img src="${producto.img}" >
