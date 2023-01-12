@@ -56,22 +56,24 @@ const contenedorMujer = document.querySelector("#contenedor_mujer")
 let productosMujer = productos.filter(produc => produc.categoria === "MUJER")
 let eliminar = document.querySelectorAll(".eliminar")
 let carritoJS = []
-
+let productos1 = []
 
 
 fetch("./js/data.json")
   .then((res) => res.json())
   .then((data) => {
     data.forEach((produc) => {
+        productos1 += produc
         const div = document.createElement("div");
-        div.setAttribute("class","contenedor")
+        div.setAttribute("class","contenedor");
         div.innerHTML = 
             `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
             <img src="${produc.img}" >
             <a href="#" class="nombre_producto">${produc.nombre}</a>
-            <a href="#" class="precio"><br>$${produc.precio}</a>`
-        contenedorMujer.append(div)
+            <a href="#" class="precio"><br>$${produc.precio}</a>`;
+        contenedorMujer.append(div);
     });
+    console.log(productos1)
   }); 
 
 const armarTabla = (prod) => {
