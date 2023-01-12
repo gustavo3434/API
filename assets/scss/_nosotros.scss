@@ -1,0 +1,21 @@
+$grisN: rgba(255,255,255, 0.7);
+                        /* Nosotros */
+.hn{
+    font-size: 1.5rem;
+    word-spacing: 2px;
+    text-align: center; 
+    text-decoration: none;
+    width: 80%;
+    margin-left: 10%;
+}
+.nosotros{
+    h3{
+        @extend .hn;
+        font-weight: bold; 
+    }
+    p{
+        @extend .hn;
+        font-size: 1.2rem;
+    }
+}
+                                /*---------------------*/

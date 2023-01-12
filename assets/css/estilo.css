@@ -1,0 +1,753 @@
+/* Galeria Principal (Index) */
+#galeria {
+  display: grid;
+  grid-template-areas: "uno uno" "dos tres" "dos cuatro";
+  grid-template-columns: 50% auto;
+  grid-template-rows: auto;
+}
+#galeria .contenedor {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+#galeria .contenedor .centrado {
+  position: absolute;
+  overflow: unset;
+}
+#galeria .contenedor .centrado:hover {
+  transform: translateY(-40px);
+  transition: 0.7s;
+}
+#galeria .contenedor .do {
+  top: 50%;
+  left: 20%;
+}
+#galeria .contenedor .tre {
+  top: 50%;
+  left: 17%;
+}
+#galeria .contenedor .cuatr {
+  top: 50%;
+  left: 30%;
+}
+#galeria .uno {
+  grid-area: uno;
+}
+#galeria .dos {
+  grid-area: dos;
+}
+#galeria .tres {
+  grid-area: tres;
+}
+#galeria .cuatro {
+  grid-area: cuatro;
+}
+#galeria div a img {
+  opacity: 0.91;
+}
+#galeria div a img:hover {
+  opacity: 0.7;
+  transform: scale(0.98, 0.98);
+}
+#galeria div div a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#galeria div div a:hover {
+  font-size: 1.9rem;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/*-----------------------*/
+/*Galeria de las diferentes secciones*/
+.galeria_ {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.galeria_ .contenedor {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+.galeria_ .contenedor .agregar {
+  position: absolute;
+  top: 70%;
+  left: 33%;
+}
+.galeria_ div {
+  box-shadow: 3px 5px 10px 3px rgba(128, 128, 128, 0.597);
+  height: 380px;
+  width: 25%;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.galeria_ div a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: gray;
+  bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.galeria_ div a:hover {
+  color: rgba(128, 128, 128, 0.597);
+}
+.galeria_ div img {
+  height: 70%;
+  width: 75%;
+  margin: 12%;
+  border-style: double;
+  color: rgba(128, 128, 128, 0.215);
+  box-shadow: 5px 8px 12px black;
+  cursor: pointer;
+}
+.galeria_ div img:hover {
+  border-style: double;
+  color: gray;
+  box-shadow: 18px 20px 60px black;
+  transition: all 0.5s ease-in-out;
+}
+.galeria_ div div {
+  height: 8%;
+  width: 40%;
+}
+.galeria_ div .precio {
+  color: black;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+#diez {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+#veinte {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+#treinta {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+/*--------------------------------*/
+/* Formulario de promociones */
+.registro {
+  text-align: center;
+  align-content: center;
+  line-height: 3rem;
+  width: 88%;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  margin-left: 6%;
+  background-color: white;
+}
+.registro h2 {
+  font-size: 2.45rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.registro p {
+  margin-bottom: -10%;
+}
+.registro .email {
+  position: relative;
+  left: 4%;
+  width: 55%;
+  height: 10%;
+}
+.registro .enviar {
+  position: relative;
+  margin-top: 28%;
+  right: 27%;
+}
+
+/*---------------------*/
+/* Formulario consulta */
+.consultas {
+  padding: 1rem;
+}
+.consultas div {
+  padding: 1rem;
+  box-shadow: 2px 2px 4px black;
+}
+.consultas fieldset legend {
+  text-align: center;
+}
+.consultas fieldset legend div {
+  display: inline-block;
+}
+.consultas label {
+  display: block;
+  margin-bottom: 1rem;
+  width: 40%;
+}
+.consultas input {
+  display: block;
+  margin-bottom: 1rem;
+  width: 40%;
+}
+.consultas textarea {
+  display: block;
+  margin-bottom: 1rem;
+  width: 40%;
+}
+
+/*---------------------*/
+/* Footer*/
+footer {
+  background-color: rgba(128, 128, 128, 0.215);
+  margin-top: 6rem;
+}
+
+.ig {
+  width: 50px;
+  margin-left: 44%;
+}
+.ig img {
+  position: relative;
+  width: 30px;
+  left: 43%;
+  top: 32px;
+}
+
+.face {
+  width: 50px;
+  margin-left: 50%;
+}
+.face img {
+  position: relative;
+  width: 30px;
+  left: 55%;
+}
+
+.cent_footer {
+  text-align: center;
+  line-height: 4rem;
+  color: black;
+}
+.cent_footer a {
+  color: black;
+  text-decoration: none;
+}
+
+.medios_pago {
+  background-color: rgba(128, 128, 128, 0.215);
+  padding: 0.5rem;
+}
+.medios_pago img {
+  display: inline-block;
+  width: 50px;
+  margin: 0.5rem;
+}
+
+/*---------------------------------------*/
+/* Logo de WhatsApp flotante */
+.wsp {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
+
+.logo {
+  width: 50px;
+}
+
+/*-------------------------------*/
+/* Nosotros */
+.hn, .nosotros p, .nosotros h3 {
+  font-size: 1.5rem;
+  word-spacing: 2px;
+  text-align: center;
+  text-decoration: none;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.nosotros h3 {
+  font-weight: bold;
+}
+.nosotros p {
+  font-size: 1.2rem;
+}
+
+/*---------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg-dg {
+  background-image: linear-gradient(to bottom, rgba(128, 128, 128, 0.7), black, black);
+}
+
+.centrar {
+  text-align: center;
+  margin-top: 3rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.item {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.item:hover {
+  font-size: 1.2rem;
+}
+
+.tit {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.titulo:hover {
+  font-size: 1.3rem;
+}
+
+.sub-tit {
+  margin: 5px;
+}
+
+.sep {
+  margin-top: 4rem;
+  text-align: center;
+  line-height: 4rem;
+  color: black;
+}
+
+.scrol {
+  height: 380px;
+}
+
+/* Indice con filtros */
+.indice {
+  display: grid;
+  margin-top: 3.5rem;
+  grid-template-areas: "cat sub_nav orden";
+  grid-template-columns: 58% 20% 22%;
+  grid-template-rows: 40px;
+  font-family: "Courier New", Courier, monospace;
+  border: solid rgba(128, 128, 128, 0.215) 1.5px;
+}
+.indice .cat { /* Indice */
+  grid-area: cat;
+}
+.indice .area-sub-menu { /* Sub menu para las categorias de productos  */
+  grid-area: sub_nav;
+}
+.indice .area-sub-menu .sub {
+  height: 41px;
+  border: solid rgba(128, 128, 128, 0.215) 1.5px;
+}
+.indice .orden { /* Ordenamiento de productos  */
+  grid-area: orden;
+  width: 100.5%;
+}
+.indice .orden .sub {
+  height: 41px;
+  border: solid rgba(128, 128, 128, 0.215) 1.5px;
+}
+
+/* -------------- */
+/* ----------------- */
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 5px;
+}
+
+.ind {
+  margin-bottom: 4rem;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+#espacio {
+  margin-top: 3.5rem;
+}
+
+/* Indice Promocion seccion Oferta*/
+.producto {
+  position: absolute;
+  background-color: rgb(205, 10, 10);
+  font-weight: bold;
+  color: white;
+  font-size: 1rem;
+  top: 0.2%;
+  left: 0.2%;
+}
+
+.tit_ofer { /*Indice seccion ofertas*/
+  color: rgb(205, 10, 10);
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+/*--------------------*/
+/* Forma Pago*/
+.forma_pago {
+  width: 90%;
+  margin: 2rem;
+  padding: 1rem;
+}
+.forma_pago h2 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  font-weight: bold;
+}
+.forma_pago ul li {
+  font-weight: bold;
+  line-height: 2rem;
+  list-style-type: square;
+}
+.forma_pago .formaPago {
+  margin-left: 15%;
+}
+.forma_pago .formaPago h3 {
+  font-weight: bold;
+}
+
+/*---------------------*/
+/*Responsive > 1024px*/
+@media screen and (min-width: 1020px) {
+  /*Galeria de las diferentes secciones*/
+  .galeria_ div {
+    height: 40%;
+  }
+}
+/*Responsive < 960px*/
+@media screen and (max-width: 1019px) {
+  .indice {
+    display: grid;
+    margin-top: 3.5rem;
+    grid-template-areas: "cat sub_nav orden";
+    grid-template-columns: 45% 27.5% 27.5%;
+    grid-template-rows: 40px;
+    border: solid rgba(128, 128, 128, 0.215) 1px;
+  }
+  .indice .cat { /* Indice */
+    grid-area: cat;
+  }
+  .indice .area-sub-menu { /* Sub menu para las categorias de productos  */
+    grid-area: sub_nav;
+  }
+  .indice .area-sub-menu .sub {
+    height: 41px;
+    border: solid rgba(128, 128, 128, 0.215) 1.5px;
+  }
+  .indice .orden { /* Ordenamiento de productos  */
+    grid-area: orden;
+    width: 100.5%;
+  }
+  .indice .orden .sub {
+    height: 41px;
+    border: solid rgba(128, 128, 128, 0.215) 1.5px;
+  }
+  /*Galeria y Indice Promocion seccion Oferta*/
+  .galeria_ {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .galeria_ .contenedor {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+  }
+  .galeria_ div {
+    box-shadow: 3px 5px 10px 3px rgba(128, 128, 128, 0.597);
+    height: 44%;
+    width: 33.31%;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .galeria_ div a {
+    text-decoration: none;
+    color: gray;
+    bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .galeria_ div a:hover {
+    color: rgba(128, 128, 128, 0.597);
+  }
+  .galeria_ div img {
+    height: 70%;
+    width: 75%;
+    margin: 12%;
+    border-style: double;
+    color: rgba(128, 128, 128, 0.215);
+    box-shadow: 5px 8px 12px black;
+    cursor: pointer;
+  }
+  .galeria_ div img:hover {
+    border-style: double;
+    color: black;
+    transform: scale(1.1, 1.1);
+    transition: all 0.5s ease-in-out;
+    box-shadow: 18px 20px 60px black;
+  }
+  .galeria_ div div {
+    height: 8%;
+    width: 40%;
+  }
+  /* Logos de IG FC del Footer*/
+  .ig {
+    margin-left: 40%;
+  }
+  .face {
+    margin-left: 50%;
+  }
+}
+/*Responsive < 768px*/
+@media screen and (max-width: 768px) {
+  main {
+    margin-top: 3rem;
+  }
+  /*Indice y filtros*/
+  .indice {
+    display: grid;
+    margin-top: 3.5rem;
+    font-size: 0.8rem;
+    grid-template-areas: "cat sub_nav orden";
+    grid-template-columns: 35% 30% 35%;
+    grid-template-rows: 40px;
+    border: solid rgba(128, 128, 128, 0.215) 1px;
+  }
+  .indice .cat { /* Indice */
+    margin-top: 3%;
+    grid-area: cat;
+  }
+  .indice .area-sub-menu { /* Sub menu para las categorias de productos  */
+    grid-area: sub_nav;
+  }
+  .indice .area-sub-menu .sub {
+    height: 41px;
+    border: solid rgba(128, 128, 128, 0.215) 1.5px;
+  }
+  .indice .orden { /* Ordenamiento de productos  */
+    grid-area: orden;
+    width: 100.5%;
+  }
+  .indice .orden .sub {
+    height: 41px;
+    border: solid rgba(128, 128, 128, 0.215) 1.5px;
+  }
+  /* Galeria Principal Index*/
+  #galeria {
+    display: grid;
+    grid-template-areas: "uno" "dos" "tres" "cuatro";
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+  #galeria .centrado {
+    position: absolute;
+    overflow: unset;
+  }
+  #galeria .centrado:hover {
+    transform: translateY(-40px);
+    transition: 0.7s;
+  }
+  #galeria .do {
+    top: 60%;
+    left: 25%;
+  }
+  #galeria .tre {
+    top: 50%;
+    left: 25%;
+  }
+  #galeria .cuatr {
+    top: 60%;
+    left: 35%;
+  }
+  img {
+    display: block;
+    width: 100%;
+  }
+  /*Galeria e Indice Promocion seccion Oferta*/
+  .galeria_ {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .galeria_ .contenedor {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+  }
+  .galeria_ div {
+    box-shadow: 3px 5px 10px black;
+    height: 40%;
+    width: 50%;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .galeria_ div div {
+    height: 10%;
+    width: 60%;
+  }
+  .galeria_ div img {
+    width: 75%;
+    height: 60%;
+    margin: 12%;
+  }
+  /*---------------------*/
+  .consultas label, .consultas input, .consultas textarea {
+    width: 60%;
+  }
+  .nosotros p {
+    font-size: 1rem;
+  }
+  /* Logos de IG FC del Footer*/
+  .ig {
+    margin-left: 40%;
+  }
+  .face {
+    margin-left: 50%;
+  }
+}
+/*Responsive < 517px*/
+@media screen and (max-width: 514px) {
+  .galeria_ div {
+    box-shadow: 3px 5px 10px black;
+    height: 375px;
+    width: 50%;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+}
+/*Responsive < 450px*/
+@media screen and (max-width: 450px) {
+  main {
+    margin-top: 3rem;
+  }
+  .buscador {
+    display: none;
+  }
+  /* Galeria Principal Index*/
+  #galeria .contenedor .centrado:hover {
+    display: none;
+  }
+  #galeria .contenedor .do {
+    top: 50%;
+    left: 20%;
+  }
+  #galeria .contenedor .tre {
+    top: 50%;
+    left: 20%;
+  }
+  #galeria .contenedor .cuatr {
+    top: 50%;
+    left: 30%;
+  }
+  .carr {
+    height: 350px;
+  }
+  .uno img {
+    height: 350px;
+  }
+  /*Indice y filtros*/
+  .indice {
+    display: grid;
+    margin-top: 3.5rem;
+    grid-template-areas: "orden sub_nav";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    border: solid rgba(128, 128, 128, 0.215) 1px;
+  }
+  .indice .cat {
+    display: none;
+  }
+  .indice .area-sub-menu { /* Sub menu para las categorias de productos  */
+    grid-area: sub_nav;
+    height: 102%;
+  }
+  .indice .orden { /* Ordenamiento de productos  */
+    grid-area: orden;
+    height: 35px;
+  }
+  /*Galeria y Indice Promocion seccion Oferta*/
+  .galeria_ {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .galeria_ .contenedor {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+  }
+  .galeria_ div {
+    box-shadow: 3px 5px 10px black;
+    height: 40%;
+    width: 100%;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .galeria_ div a {
+    font-size: 1rem;
+  }
+  .galeria_ div div {
+    height: 7%;
+    width: 30%;
+  }
+  .galeria_ div img {
+    width: 77%;
+    height: 71%;
+    margin: 10%;
+    margin-left: 12%;
+    border-style: double;
+    color: rgba(128, 128, 128, 0.215);
+    box-shadow: 5px 8px 12px black;
+    cursor: pointer;
+  }
+  /*--------------------*/
+  /* Logos de IG FC del Footer*/
+  .ig {
+    margin-left: 31%;
+  }
+  .face {
+    margin-left: 46%;
+  }
+  /* Formulario de promociones */
+  .registro {
+    text-align: center;
+    align-content: center;
+    line-height: 3rem;
+    width: 88%;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    margin-left: 6%;
+    background-color: white;
+  }
+  .registro h2 {
+    font-size: 2.4rem;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  }
+  .registro p {
+    margin-bottom: -10%;
+  }
+  .registro .email {
+    position: relative;
+    left: 8%;
+    width: 70%;
+    height: 10%;
+  }
+  .registro .enviar {
+    position: relative;
+    margin-top: 28%;
+    right: 35%;
+  }
+}/*# sourceMappingURL=estilo.css.map */

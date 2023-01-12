@@ -1,0 +1,65 @@
+                        /* Formulario de promociones */
+.registro{
+    text-align: center;
+    align-content: center;
+    line-height: 3rem;
+    width: 88%;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    margin-left: 6%;
+    background-color: white;
+    h2{
+        font-size: 2.45rem;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    p{
+        margin-bottom: -10%;
+    }
+    .email{
+        position: relative;
+        left: 4%;
+        width: 55%;
+        height: 10%;
+        
+    }
+    .enviar{
+        position: relative;
+        margin-top: 28%;
+        right: 27%;
+    }
+}
+                            /*---------------------*/
+
+                            /* Formulario consulta */
+.consultas{
+    padding: 1rem;
+    div{
+        padding: 1rem;
+        box-shadow: 2px 2px 4px black;
+    }
+    fieldset{
+        legend{
+            text-align: center;
+            div {
+            display: inline-block;
+             }
+        }
+    }
+    label{
+        display: block;
+        margin-bottom: 1rem;
+        width: 40%;
+    }
+    input{
+        display: block;
+        margin-bottom: 1rem;
+        width: 40%;
+    }
+    textarea{
+        display: block;
+        margin-bottom: 1rem;
+        width: 40%;
+    }
+}
+                        /*---------------------*/
+

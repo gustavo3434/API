@@ -1,0 +1,55 @@
+$gris1: rgba(128, 128, 128, 0.215);
+                                /* Footer*/
+footer{
+    background-color: $gris1;
+    margin-top: 6rem;
+}
+.ig{
+    width: 50px;
+    margin-left: 44%;
+    img{
+        position: relative;
+        width: 30px;
+        left: 43%;
+        top: 32px;
+    }
+}
+.face{
+    width: 50px;
+    margin-left: 50%;
+    img{
+        position: relative;
+        width: 30px;
+        left: 55%;
+    }
+}
+.cent_footer{
+    text-align: center;
+    line-height: 4rem;
+    color: black;
+    a{
+        color: black;
+        text-decoration: none;
+    }
+}
+.medios_pago{
+    background-color: $gris1;
+    padding: 0.5rem;
+    img{
+        display: inline-block;
+        width: 50px;
+        margin: 0.5rem;
+    }
+}
+/*---------------------------------------*/
+/* Logo de WhatsApp flotante */
+.wsp{
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+.logo{
+    width: 50px;
+}
+
+/*-------------------------------*/

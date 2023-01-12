@@ -1,0 +1,153 @@
+$degrade: linear-gradient(to bottom, rgba(128, 128, 128, 0.7), black, black );
+$gris1: rgba(128, 128, 128, 0.215);
+$grisN: rgba(255,255,255, 0.7);
+                    /* Galeria Principal (Index) */
+
+@mixin sizes ($height,$width) {
+    height:$height;
+    width:$width;
+}
+
+
+#galeria{
+    display: grid;
+    grid-template-areas:  
+    "uno uno"
+    "dos tres"
+    "dos cuatro";
+    grid-template-columns: 50% auto;
+    grid-template-rows: auto;
+    .contenedor{
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        .centrado{
+            position: absolute;
+            overflow: unset;
+            &:hover{
+                transform: translateY(-40px);
+                transition: 0.7s;
+            }
+        }
+        .do{
+            top: 50%;
+            left: 20%;
+        }
+        .tre{
+            top: 50%;
+            left: 17%;
+        }
+        .cuatr{
+            top: 50%;
+            left: 30%;
+        }
+    }
+    .uno{
+        grid-area: uno; 
+    }
+    .dos{
+        grid-area: dos;
+    }
+    .tres{
+        grid-area: tres;
+    }
+    .cuatro{
+        grid-area: cuatro;
+    }
+    div{
+        a{
+            img{
+                opacity: 0.91;
+                &:hover{
+                    opacity: 0.7;
+                    transform: scale(0.98,0.98);
+                }
+            }
+        }
+        div{
+            a{
+                color: white;
+                text-decoration: none;
+                font-size: 1.6rem;
+                font-weight: bold;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                &:hover{
+                    font-size: 1.9rem;
+                }
+            }
+        }
+    }
+}
+img{
+    display: block;
+    width: 100%;
+}
+                    /*-----------------------*/
+
+                    /*Galeria de las diferentes secciones*/
+.galeria_{            
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .contenedor{
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        .agregar{
+            position: absolute;
+            top: 70%;
+            left: 33%;
+        }
+    }
+    div{
+        box-shadow: 3px 5px 10px 3px rgba(128, 128, 128, 0.597);
+        @include sizes(380px,25%);
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+            a{
+                text-decoration: none;
+                font-size: 0.8rem;
+                color: gray;
+                bottom: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                &:hover{
+                    color: rgba(128, 128, 128, 0.597)
+                }
+            }
+            img{
+                @include sizes(70%,75%);
+                margin: 12%;
+                border-style: double;
+                color: $gris1;
+                box-shadow: 5px 8px 12px black;
+                cursor: pointer;
+                &:hover{
+                    border-style: double;
+                    color: gray;
+                    box-shadow: 18px 20px 60px black;
+                    transition: all 0.5s ease-in-out;
+                }
+            }
+            div {
+                @include sizes(8%,40%);
+            }
+            .precio{
+                color: black;
+                font-size: 0.9rem;
+                font-weight: bold;
+            }
+    }
+}
+#diez{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+#veinte{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+#treinta{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+                    /*--------------------------------*/

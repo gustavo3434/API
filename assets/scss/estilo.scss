@@ -1,0 +1,512 @@
+@import "galeria";
+@import "formulario";
+@import "footer";
+@import "nosotros";
+
+$degrade: linear-gradient(to bottom, rgba(128, 128, 128, 0.7), black, black );
+$gris1: rgba(128, 128, 128, 0.215);
+$grisN: rgba(255,255,255, 0.7);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@mixin sizes ($height,$width) {
+    height:$height;
+    width:$width;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.bg-dg{
+    background-image: $degrade;
+}
+.centrar{
+    text-align: center;
+    margin-top: 3rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+.item{
+    font-size: 1rem;
+    font-weight: bold;
+    &:hover{
+    font-size: 1.2rem;
+    }
+}
+.tit{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.titulo{
+    &:hover{
+        font-size: 1.3rem;
+    }
+}
+.sub-tit{
+    margin: 5px;
+}
+.sep{
+    margin-top: 4rem;
+    text-align: center;
+    line-height: 4rem;
+    color: black;
+}
+.scrol{
+    height: 380px;
+    
+}
+                        /* Indice con filtros */
+.indice{
+    display: grid;
+    margin-top: 3.5rem;
+    grid-template-areas: "cat sub_nav orden";
+    grid-template-columns: 58% 20% 22%;
+    grid-template-rows: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    border: solid $gris1 1.5px;
+    .cat{ /* Indice */
+        grid-area: cat;
+    }
+    .area-sub-menu{ /* Sub menu para las categorias de productos  */
+        grid-area: sub_nav;
+        
+        .sub{
+            height: 41px;
+            border: solid $gris1 1.5px;
+        }
+    }
+    .orden{ /* Ordenamiento de productos  */
+        grid-area: orden;
+        width: 100.5%;
+        .sub{
+            height: 41px;
+            border: solid $gris1 1.5px;
+            
+        }
+    }
+}
+/* -------------- */
+                        /* ----------------- */
+h2{
+    text-align: center;
+    font-size: 2rem;
+    margin: 5px;
+}
+.ind{
+    margin-bottom: 4rem;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+#espacio{
+    margin-top: 3.5rem;
+}
+                    /* Indice Promocion seccion Oferta*/
+.producto{
+    position: absolute;
+    background-color: rgb(205, 10, 10);
+    font-weight: bold;
+    color: white;
+    font-size: 1rem;
+    top: 0.2%;
+    left: 0.2%;
+}
+
+.tit_ofer{/*Indice seccion ofertas*/
+    color: rgb(205, 10, 10);
+    font-weight: bold;
+    font-size: 3rem;
+}
+                            /*--------------------*/
+                           
+                                    /* Forma Pago*/
+.forma_pago{
+    width: 90%;
+    margin: 2rem;
+    padding: 1rem;
+    h2{
+        font-size: 3.5rem;
+        text-align: center;
+        margin-bottom: 4rem;
+        font-weight: bold;
+    }
+    ul{
+        li{
+            font-weight: bold;
+            line-height: 2rem;
+            list-style-type: square;
+        }
+    }
+    .formaPago{
+        margin-left: 15%;
+        h3{
+            font-weight: bold;
+        }
+    }
+}
+                                /*---------------------*/
+                                /*Responsive > 1024px*/
+@media screen and (min-width:1020px)
+{
+/*Galeria de las diferentes secciones*/
+    .galeria_{            
+        div{
+            height: 40%;
+        }
+    }
+}
+                                /*Responsive < 960px*/
+@media screen and (max-width:1019px) 
+{
+    .indice{
+        display: grid;
+        margin-top: 3.5rem;
+        grid-template-areas: "cat sub_nav orden";
+        grid-template-columns: 45% 27.5% 27.5%;
+        grid-template-rows: 40px;
+        border: solid $gris1 1px;
+        .cat{ /* Indice */
+            grid-area: cat;
+        }
+        .area-sub-menu{ /* Sub menu para las categorias de productos  */
+            grid-area: sub_nav;
+            
+            .sub{
+                height: 41px;
+                border: solid $gris1 1.5px;
+            }
+        }
+        .orden{ /* Ordenamiento de productos  */
+            grid-area: orden;
+            width: 100.5%;
+            .sub{
+                height: 41px;
+                border: solid $gris1 1.5px;
+                
+            }
+        }
+    }
+    /*Galeria y Indice Promocion seccion Oferta*/
+    .galeria_{            
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .contenedor{
+            position: relative;
+            display: inline-block;
+            text-align: center;
+        }
+        div{
+            box-shadow: 3px 5px 10px 3px rgba(128, 128, 128, 0.597);
+            @include sizes(44%,33.31%);
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+                a{
+                    text-decoration: none;
+                    color: gray;
+                    bottom: 10px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    &:hover{
+                        color: rgba(128, 128, 128, 0.597)
+                    }
+                }
+                img{
+                    @include sizes(70%,75%);
+                    margin: 12%;
+                    border-style: double;
+                    color: $gris1;
+                    box-shadow: 5px 8px 12px black;
+                    cursor: pointer;
+                    &:hover{
+                        border-style: double;
+                        color: black;
+                        transform: scale(1.1,1.1);
+                        transition: all 0.5s ease-in-out;
+                        box-shadow: 18px 20px 60px black;
+                    }
+                }
+                div {
+                    @include sizes(8%,40%);
+                }
+        }
+    }
+    /* Logos de IG FC del Footer*/
+    .ig{
+        margin-left: 40%;
+        
+    }
+    .face{ 
+        margin-left: 50%;
+        
+    }
+}
+                            /*Responsive < 768px*/
+@media screen and (max-width:768px) 
+{      
+    main{
+        margin-top: 3rem;
+    }
+    /*Indice y filtros*/
+    .indice{
+        display: grid;
+        margin-top: 3.5rem;
+        font-size: 0.8rem;
+        grid-template-areas: "cat sub_nav orden";
+        grid-template-columns: 35% 30% 35%;
+        grid-template-rows: 40px;
+        border: solid $gris1 1px;
+        .cat{ /* Indice */
+            margin-top: 3%;
+            grid-area: cat;
+        }
+        .area-sub-menu{ /* Sub menu para las categorias de productos  */
+            grid-area: sub_nav;
+            
+            .sub{
+                height: 41px;
+                border: solid $gris1 1.5px;
+            }
+        }
+        .orden{ /* Ordenamiento de productos  */
+            grid-area: orden;
+            width: 100.5%;
+            .sub{
+                height: 41px;
+                border: solid $gris1 1.5px;
+                
+            }
+        }
+    }
+    /* Galeria Principal Index*/
+    #galeria{
+        display: grid;
+        grid-template-areas:  
+        "uno" 
+        "dos"
+        "tres" 
+        "cuatro";
+        grid-template-columns:auto;
+        grid-template-rows: auto;
+        .centrado{
+            position: absolute;
+            overflow: unset;
+            &:hover{
+                transform: translateY(-40px);
+                transition: 0.7s;
+            }
+        }
+        .do{
+            top: 60%;
+            left: 25%;
+        }
+        .tre{
+            top: 50%;
+            left: 25%;
+        }
+        .cuatr{
+            top: 60%;
+            left: 35%;
+        }
+    }
+    img{
+        display: block;
+        width: 100%;
+    }
+    
+    /*Galeria e Indice Promocion seccion Oferta*/
+    .galeria_{            
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .contenedor{
+            position: relative;
+            display: inline-block;
+            text-align: center;
+        }
+        div{
+            box-shadow: 3px 5px 10px black;
+            @include sizes(40%,50%);
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            div{
+                height: 10%;
+                width: 60%;
+            }
+            img{
+                width: 75%;
+                height: 60%;
+                margin: 12%;
+            }
+        }
+        
+    }
+
+    /*---------------------*/
+    .consultas label , .consultas input , .consultas textarea{
+        width: 60%;
+    }
+    .nosotros{
+        p{
+            font-size: 1rem;
+        }
+    }
+    /* Logos de IG FC del Footer*/
+    .ig{
+        margin-left: 40%;
+        
+    }
+    .face{ 
+        margin-left: 50%;
+        
+    }
+}
+                                /*Responsive < 517px*/
+@media screen and (max-width:514px) 
+{
+    .galeria_{            
+        div{
+            box-shadow: 3px 5px 10px black;
+            @include sizes(375px,50%);
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        
+        }
+    }
+}
+                                /*Responsive < 450px*/
+@media screen and (max-width:450px) 
+{
+    main{
+        margin-top: 3rem;
+    }
+    .buscador{
+        display: none;
+    }
+    /* Galeria Principal Index*/
+    #galeria{
+        .contenedor{
+            .centrado{
+                &:hover{
+                    display: none;
+                }
+            }
+            .do{
+                top: 50%;
+                left: 20%;
+            }
+            .tre{
+                top: 50%;
+                left: 20%;
+            }
+            .cuatr{
+                top: 50%;
+                left: 30%;
+            }
+        }
+    }
+    .carr{
+        height: 350px;
+    }
+    .uno{
+        img{
+            height: 350px;
+        }
+    }
+    /*Indice y filtros*/
+    .indice{
+        display: grid;
+        margin-top: 3.5rem;
+        grid-template-areas: "orden sub_nav";
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+        border: solid $gris1 1px;
+        .cat{ 
+            display: none;
+        }
+        .area-sub-menu{ /* Sub menu para las categorias de productos  */
+            grid-area: sub_nav;
+            height: 102%;
+        }
+        .orden{ /* Ordenamiento de productos  */
+            grid-area: orden;
+            height: 35px;
+        }
+
+    }
+    /*Galeria y Indice Promocion seccion Oferta*/
+    .galeria_{            
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .contenedor{
+            position: relative;
+            display: inline-block;
+            text-align: center;
+        }
+        div{
+            box-shadow: 3px 5px 10px black;
+            @include sizes(40%,100%);
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            a{
+                font-size: 1rem;
+            }
+            div{
+                height: 7%;
+                width: 30%;
+            }
+            img{
+                width: 77%;
+                height: 71%;
+                margin: 10%;
+                margin-left: 12%;
+                border-style: double;
+                color: $gris1;
+                box-shadow: 5px 8px 12px black;
+                cursor: pointer;
+        }
+        
+        }
+    }
+    /*--------------------*/
+    /* Logos de IG FC del Footer*/
+    .ig{
+        margin-left: 31%;
+        
+
+    }
+    .face{
+        margin-left: 46%;
+        
+    }
+    
+                                /* Formulario de promociones */
+    .registro{
+        text-align: center;
+        align-content: center;
+        line-height: 3rem;
+        width: 88%;
+        margin-top: 6rem;
+        margin-bottom: 6rem;
+        margin-left: 6%;
+        background-color: white;
+        h2{
+            font-size: 2.4rem;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        p{
+            margin-bottom: -10%;
+        }
+        .email{
+            position: relative;
+            left: 8%;
+            width: 70%;
+            height: 10%;
+            
+        }
+        .enviar{
+            position: relative;
+            margin-top: 28%;
+            right: 35%;
+        }
+    }
+    
+}
