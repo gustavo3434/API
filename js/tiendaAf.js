@@ -58,7 +58,11 @@ let eliminar = document.querySelectorAll(".eliminar")
 let carritoJS = []
 
 
-fetch("./data.json") 
+fetch("./data.json")
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data)
+}); 
 
 const armarTabla = (prod) => {
     return `<div class="contenedor" id="espacio">
