@@ -65,10 +65,10 @@ fetch("./js/data.json")
     data.forEach((produc) => {
         contenedorMujer.innerHTML = 
             `<div class="contenedor" id="espacio">
-                <button type="button" id="${producto.id}" class="agregar btn btn-dark btn-sm">+</button>
-                <img src="${producto.img}" >
-                <a href="#" class="nombre_producto">${producto.nombre}</a>
-                <a href="#" class="precio"><br>$${producto.precio}</a>
+                <button type="button" id="${produc.id}" class="agregar btn btn-dark btn-sm">+</button>
+                <img src="${produc.img}" >
+                <a href="#" class="nombre_producto">${produc.nombre}</a>
+                <a href="#" class="precio"><br>$${produc.precio}</a>
             </div>`
     });
   }); 
