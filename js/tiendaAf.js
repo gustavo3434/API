@@ -59,7 +59,7 @@ let carritoJS = []
 
 
 
-fetch("./data.json")
+fetch("./js/data.json")
   .then((res) => res.json())
   .then((data) => {
     data.forEach((producto) => {
