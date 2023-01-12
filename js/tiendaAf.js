@@ -40,9 +40,6 @@ const productos = [{id: 1,nombre:"GORRA ELEMENT WOLFEBORO",color: "NEGRO", preci
 {id: 39,nombre:"TOP CHECKS/CUADRILLE", categoria:"MUJER" ,color: "VERDE",precio: 9000, img:"./multimedia/mujer/TOP_CHECKS_CUADRILLE.jpg"},
 {id: 40,nombre:"SHORT RUSTY HEARTBREAKER",categoria:"MUJER" ,color: "MARRON",precio: 10500, img:"./multimedia/mujer/SHORT_RUSTY_HEARTBREAKER.jpg"},
 ]
-
-fetch("./data.json")
-
                                 //VARIABLES//
 let filt = document.querySelector("#filtro")
 const inputSearch = document.querySelector(".busqueda")
@@ -63,7 +60,6 @@ fetch("./js/data.json")
   .then((res) => res.json())
   .then((data) => {
     data.forEach((produc) => {
-        
         const div = document.createElement("div");
         div.setAttribute("class","contenedor");
         div.innerHTML = 
@@ -72,8 +68,14 @@ fetch("./js/data.json")
             <a href="#" class="nombre_producto">${produc.nombre}</a>
             <a href="#" class="precio"><br>$${produc.precio}</a>`;
         contenedorMujer.append(div);
+    
+        agregar = document.querySelectorAll(".agregar")
+        agregar.forEach(el => {
+            el.addEventListener("click", (e) => {
+                agregarACarrito(e.target.id)
+            });
+        })
     });
-    console.log(productos1)
   }); 
 
 const armarTabla = (prod) => {
@@ -163,10 +165,13 @@ agregar.forEach(el => {
         agregarACarrito(e.target.id)
     });
 })
-
-let productosCarrito = []
 function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
-    let productoEncontrado = productos.find(prod => prod.id === parseInt(id))
+    fetch("./data.json")
+        .then((res) => res.json())
+        .then((data) => {
+                let productoEncontrado = data.find(prod => prod.id === parseInt(id))
+        });
+
     if(productosCarrito.some((el) => el.id == productoEncontrado.id)){
         productosCarrito.map(el => el.cantidad += 1)
     } else{
@@ -174,6 +179,17 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
     }
     guardarLocal("listaProductos",JSON.stringify(productosCarrito.concat(carritoJS)));
 }
+
+let productosCarrito = []
+/*function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
+    let productoEncontrado = productos.find(prod => prod.id === parseInt(id))
+    if(productosCarrito.some((el) => el.id == productoEncontrado.id)){
+        productosCarrito.map(el => el.cantidad += 1)
+    } else{
+        productosCarrito.push(productoEncontrado)
+    }
+    guardarLocal("listaProductos",JSON.stringify(productosCarrito.concat(carritoJS)));
+}*/
 
 buscar.addEventListener("click",(e) => {
     e.preventDefault()
