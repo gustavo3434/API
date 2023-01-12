@@ -58,6 +58,8 @@ let eliminar = document.querySelectorAll(".eliminar")
 let carritoJS = []
 
 
+fetch("./data.json") 
+
 const armarTabla = (prod) => {
     return `<div class="contenedor" id="espacio">
                 <button type="button" id="${prod.id}" class="agregar btn btn-dark btn-sm">+</button>
