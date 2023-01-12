@@ -63,15 +63,16 @@ fetch("./js/data.json")
   .then((res) => res.json())
   .then((data) => {
     data.forEach((producto) => {
-        console.log(producto)
-        contenedorMujer.innerHTML = 
+        const div = document.createElement("div");
+        div = document.getElementsByClassName("galeria")
+        div.innerHTML = 
             `<div class="contenedor" id="espacio">
                 <button type="button" id="${producto.id}" class="agregar btn btn-dark btn-sm">+</button>
                 <img src="${producto.img}" >
                 <a href="#" class="nombre_producto">${producto.nombre}</a>
                 <a href="#" class="precio"><br>$${producto.precio}</a>
             </div>`
-      
+        contenedorMujer.append(div)
     });
   }); 
 
