@@ -58,11 +58,21 @@ let eliminar = document.querySelectorAll(".eliminar")
 let carritoJS = []
 
 
+
 fetch("./data.json")
   .then((res) => res.json())
   .then((data) => {
-    console.log(data)
-}); 
+    data.forEach((producto) => {
+      contenedorMujer.innerHTML = 
+            `<div class="contenedor" id="espacio">
+                <button type="button" id="${producto.id}" class="agregar btn btn-dark btn-sm">+</button>
+                <img src="${producto.img}" >
+                <a href="#" class="nombre_producto">${producto.nombre}</a>
+                <a href="#" class="precio"><br>$${producto.precio}</a>
+            </div>`
+      
+    });
+  }); 
 
 const armarTabla = (prod) => {
     return `<div class="contenedor" id="espacio">
