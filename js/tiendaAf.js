@@ -64,7 +64,7 @@ fetch("./js/data.json")
   .then((data) => {
     data.forEach((producto) => {
         const div = document.createElement("div");
-        div = document.getElementsByClassName("galeria")
+        div = document.getElementsByClassName("galeria_")
         div.innerHTML = 
             `<div class="contenedor" id="espacio">
                 <button type="button" id="${producto.id}" class="agregar btn btn-dark btn-sm">+</button>
