@@ -164,7 +164,7 @@ agregar.forEach(el => {
         agregarACarrito(e.target.id)
     });
 })
-function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
+const agregarACarrito = (id) =>{ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
     fetch("./data.json")
         .then((res) => res.json())
         .then((data) => {
