@@ -62,17 +62,14 @@ let carritoJS = []
 fetch("./js/data.json")
   .then((res) => res.json())
   .then((data) => {
-    data.forEach((producto) => {
-        const div = document.createElement("div");
-        div.classList.add("galeria_");
-        div.innerHTML = 
+    data.forEach((produc) => {
+        contenedorMujer.innerHTML = 
             `<div class="contenedor" id="espacio">
                 <button type="button" id="${producto.id}" class="agregar btn btn-dark btn-sm">+</button>
                 <img src="${producto.img}" >
                 <a href="#" class="nombre_producto">${producto.nombre}</a>
                 <a href="#" class="precio"><br>$${producto.precio}</a>
             </div>`
-        contenedorMujer.append(div)
     });
   }); 
 
