@@ -63,7 +63,7 @@ fetch("./js/data.json")
   .then((res) => res.json())
   .then((data) => {
     data.forEach((produc) => {
-        productos1.push(produc)
+        
         const div = document.createElement("div");
         div.setAttribute("class","contenedor");
         div.innerHTML = 
