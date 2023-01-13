@@ -75,6 +75,7 @@ fetch("./js/data.json")
                 agregarACarrito(e.target.id) 
             });
         })
+    cargarCarrito(carritoJS,elementosCarrito)
   }); 
 
 const armarTabla = (prod) => {
@@ -164,12 +165,12 @@ agregar.forEach(el => {
         agregarACarrito(e.target.id)
     });
 })
+let productosCarrito = []
 const agregarACarrito = (id) =>{ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
-    let productoEncontrado = []
     fetch("./data.json")
         .then((res) => res.json())
         .then((data) => {
-            productoEncontrado = data.find(prod => prod.id === parseInt(id))
+            let productoEncontrado = data.find(prod => prod.id === parseInt(id))
             console.log(data)
         }); 
     if(productosCarrito.some((el) => el.id == productoEncontrado.id)){
@@ -180,7 +181,7 @@ const agregarACarrito = (id) =>{ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
     guardarLocal("listaProductos",JSON.stringify(productosCarrito.concat(carritoJS)));
 }
 
-let productosCarrito = []
+
 /*function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
     let productoEncontrado = productos.find(prod => prod.id === parseInt(id))
     if(productosCarrito.some((el) => el.id == productoEncontrado.id)){
