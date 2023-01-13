@@ -103,7 +103,7 @@ const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };//
 
 let productosCarrito = []
 function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
-    fetch("./data.json")
+    fetch("./js/data.json")
         .then((res) => res.json())
         .then((data) => {
             let producs = data.results;
