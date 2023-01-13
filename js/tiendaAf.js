@@ -69,12 +69,6 @@ fetch("./js/data.json")
             <a href="#" class="precio"><br>$${produc.precio}</a>`;
         contenedorMujer.append(div);
     });
-    agregar = document.querySelectorAll(".agregar")
-        agregar.forEach(el => {
-            el.addEventListener("click", (e) => {
-                agregarACarrito(e.target.id) 
-            });
-        })
     
   }); 
 
