@@ -98,73 +98,9 @@ const armarCarrito = (prod) => {
 
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };// FUNCION PARA GUARDAR DATOS EN LOCALSTORAGE 
 
-const cargarCarrito = (array,para) => {
-    let tabla = ""
-    if (array.length > 0 ) {
-        array.forEach((produc) => {
-            tabla += armarCarrito(produc)
-        })
-    }
-    para.innerHTML = tabla
-    eliminar = document.querySelectorAll(".eliminar")
-    eliminar.forEach(el => {
-        el.addEventListener("click", (e) => {
-            eliminarDeCarrito(e.target.id)
-        });
-    })
-}
 
-function eliminarDeCarrito(id){ //FUNCION PARA ELIMINAR PRODUCTOS AL CARRITO
-    let productoEncontrado = carritoJS.find(prod => prod.id === parseInt(id))
-    carritoJS = carritoJS.filter((item) => item !== productoEncontrado)
-    if (carritoJS.length > 0) {
-        cargarCarrito(carritoJS,elementosCarrito)
-        guardarLocal("listaProductos", JSON.stringify(carritoJS));
-        totalcarrito.innerText = totalCarrito(carritoJS)
-    }else {
-        ocul = document.querySelector(".ocultarTot").style.display = "none"
-        cargarCarrito(carritoJS,elementosCarrito)
-        guardarLocal("listaProductos", JSON.stringify(carritoJS));
-        let carritoVacio = document.createElement(`h2`)
-        carritoVacio.innerHTML = 
-        `<p class="centrar">El carrito de compras está vacío.</p>`
-        idCarrito.appendChild(carritoVacio)
-        ocu = document.querySelector(".scrols").style.display = "none"
-    }
-}
 
-const filtrado = () => { //FUNCION DE FILTRADO DE PRODUCTOS 
-    let parametro = inputSearch.value.trim().toUpperCase()
-    let resultados =  []
-    if (parametro != "" ) {
-        resultados = productos.filter(produ => produ.nombre.includes(parametro) || produ.color.includes(parametro) )
-    } 
-    if (resultados.length > 0) {
-        cargarProductos(resultados,filt)
-    }
-}
 
-/*const cargarProductos = (array,para) => { 
-    let tabla = ""
-    if (array.length > 0 ) {
-        array.forEach((produc) => {
-            tabla += armarTabla(produc)
-        })
-    }
-    para.innerHTML = tabla
-    agregar = document.querySelectorAll(".agregar")
-    agregar.forEach(el => {
-        el.addEventListener("click", (e) => {
-            agregarACarrito(e.target.id)
-        });
-    })
-}*/
-
-agregar.forEach(el => {
-    el.addEventListener("click", (e) => {
-        agregarACarrito(e.target.id)
-    });
-})
 let productosCarrito = []
 const agregarACarrito = (id) =>{ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
     fetch("./data.json")
@@ -180,43 +116,3 @@ const agregarACarrito = (id) =>{ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
         guardarLocal("listaProductos",JSON.stringify(productosCarrito.concat(carritoJS)));
         
 }
-
-
-/*function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
-    let productoEncontrado = productos.find(prod => prod.id === parseInt(id))
-    if(productosCarrito.some((el) => el.id == productoEncontrado.id)){
-        productosCarrito.map(el => el.cantidad += 1)
-    } else{
-        productosCarrito.push(productoEncontrado)
-    }
-    guardarLocal("listaProductos",JSON.stringify(productosCarrito.concat(carritoJS)));
-}*/
-
-buscar.addEventListener("click",(e) => {
-    e.preventDefault()
-    const ocultar = document.querySelector(".ocultar").style.display = "none";
-    filtrado ()
-})
-
-function totalCarrito (array) { // FUNCION TOTAL DE CARRITO
-    let total = 0
-    for (const producto of array) {
-        total += producto.precio;
-    }
-    return total
-}
-
-carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
-if (carritoJS.length > 0) {
-    cargarCarrito(carritoJS,elementosCarrito)
-    totalCarrito(carritoJS)
-    totalcarrito.innerText = totalCarrito(carritoJS)
-}else {
-    ocul = document.querySelector(".ocultarTot").style.display = "none"
-    let carritoVacio = document.createElement(`h2`)
-    carritoVacio.innerHTML = 
-    `<p class="centrar">El carrito de compras está vacío.</p>`
-    idCarrito.appendChild(carritoVacio)
-    ocu = document.querySelector(".scrol").style.display = "none"
-}
-
