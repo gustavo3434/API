@@ -106,8 +106,7 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
     fetch("./js/data.json")
         .then((res) => res.json())
         .then((data) => {
-            let producs = data.results;
-            let productoEncontrado = producs.find(prod => prod.id === parseInt(id))
+            let productoEncontrado = data.find(prod => prod.id === parseInt(id))
         if(productosCarrito.some((el) => el.id == productoEncontrado.id)){
             productosCarrito.map(el => el.cantidad += 1)
         } else{
