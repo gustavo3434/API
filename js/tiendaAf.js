@@ -176,8 +176,8 @@ const agregarACarrito = (id) =>{ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
         } else{
             productosCarrito.push(productoEncontrado)
             }
-        guardarLocal("listaProductos",JSON.stringify(productosCarrito.concat(carritoJS)));
         }); 
+        guardarLocal("listaProductos",JSON.stringify(productosCarrito.concat(carritoJS)));
         
 }
 
