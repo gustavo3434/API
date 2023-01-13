@@ -68,13 +68,14 @@ fetch("./js/data.json")
             <a href="#" class="nombre_producto">${produc.nombre}</a>
             <a href="#" class="precio"><br>$${produc.precio}</a>`;
         contenedorMujer.append(div);
-    });
-    agregar = document.querySelectorAll(".agregar")
+        agregar = document.querySelectorAll(".agregar")
         agregar.forEach(el => {
             el.addEventListener("click", (e) => {
                 agregarACarrito(e.target.id) 
             });
         })
+    });
+    
     cargarCarrito(carritoJS,elementosCarrito)
   }); 
 
@@ -171,7 +172,6 @@ const agregarACarrito = (id) =>{ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
         .then((res) => res.json())
         .then((data) => {
             let productoEncontrado = data.find(prod => prod.id === parseInt(id))
-            console.log(data)
         }); 
     if(productosCarrito.some((el) => el.id == productoEncontrado.id)){
         productosCarrito.map(el => el.cantidad += 1)
