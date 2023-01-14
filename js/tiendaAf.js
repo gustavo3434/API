@@ -100,8 +100,6 @@ const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };//
 
 
 
-
-
 const cargarCarrito = (array,para) => {
     let tabla = ""
     if (array.length > 0 ) {
@@ -156,12 +154,6 @@ const cargarProductos = (array,para) => {
         })
     }
     para.innerHTML = tabla
-    agregar = document.querySelectorAll(".agregar")
-    agregar.forEach(el => {
-        el.addEventListener("click", (e) => {
-            agregarACarrito(e.target.id)
-        });
-    })
 }
 
 agregar.forEach(el => {
