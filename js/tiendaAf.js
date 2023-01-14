@@ -75,19 +75,6 @@ fetch("./js/data.json")
                 agregarACarrito(e.target.id) 
             });
         })
-        carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
-        if (carritoJS.length > 0) {
-            cargarCarrito(carritoJS,elementosCarrito)
-            totalCarrito(carritoJS)
-            totalcarrito.innerText = totalCarrito(carritoJS)
-        }else {
-            ocul = document.querySelector(".ocultarTot").style.display = "none"
-            let carritoVacio = document.createElement(`h2`)
-            carritoVacio.innerHTML = 
-            `<p class="centrar">El carrito de compras está vacío.</p>`
-            idCarrito.appendChild(carritoVacio)
-            ocu = document.querySelector(".scrol").style.display = "none"
-        }
     
   }); 
 
@@ -213,5 +200,17 @@ function totalCarrito (array) { // FUNCION TOTAL DE CARRITO
     return total
 }
 
-
+carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
+if (carritoJS.length > 0) {
+    cargarCarrito(carritoJS,elementosCarrito)
+    totalCarrito(carritoJS)
+    totalcarrito.innerText = totalCarrito(carritoJS)
+}else {
+    ocul = document.querySelector(".ocultarTot").style.display = "none"
+    let carritoVacio = document.createElement(`h2`)
+    carritoVacio.innerHTML = 
+    `<p class="centrar">El carrito de compras está vacío.</p>`
+    idCarrito.appendChild(carritoVacio)
+    ocu = document.querySelector(".scrol").style.display = "none"
+}
 
