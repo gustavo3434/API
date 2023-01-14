@@ -121,11 +121,11 @@ const cargarProductos = (array,para) => {
     })
 }
 
-/*agregar.forEach(el => {
+agregar.forEach(el => {
     el.addEventListener("click", (e) => {
         agregarACarrito(e.target.id)
     });
-})*/
+})
 
 let productosCarrito = []
 function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
