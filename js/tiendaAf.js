@@ -98,11 +98,12 @@ const filtrado = () => { //FUNCION DE FILTRADO DE PRODUCTOS
             .then((res) => res.json())
             .then((data) => {
                 resultados = data.filter(produ => produ.nombre.includes(parametro) || produ.color.includes(parametro) )
-            
+                console.log(resultados)
+                if (resultados.length > 0) {
+                    cargarProductos(resultados,filt)
+                }
             }); 
-            if (resultados.length > 0) {
-                cargarProductos(resultados,filt)
-            }
+            
     } 
 }
 
