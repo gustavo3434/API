@@ -30,6 +30,17 @@ let productos1 = []
             <a href="#" class="nombre_producto">${produc.nombre}</a>
             <a href="#" class="precio"><br>$${produc.precio}</a>`
         contenedorMujer.append(div) 
+    let productosHombre = data.filter(produc => produc.categoria === "HOMBRE")
+    productosHombre.forEach((produc) => {
+        const div = document.createElement("div");
+        div.setAttribute("class","contenedor");
+        div.innerHTML = 
+            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
+            <img src="${produc.img}" >
+            <a href="#" class="nombre_producto">${produc.nombre}</a>
+            <a href="#" class="precio"><br>$${produc.precio}</a>`
+        contenedorHombre.append(div) 
+        });
     });
     let agregar1 = document.querySelectorAll(".agregar")
     agregar1.forEach(el => {
@@ -38,7 +49,7 @@ let productos1 = []
         });
     })
   }); 
-  fetch("./js/data.json")
+  /*fetch("./js/data.json")
   .then((res) => res.json())
   .then((data) => {
     let productosHombre = data.filter(produc => produc.categoria === "HOMBRE")
@@ -124,7 +135,7 @@ let productos1 = []
             agregarACarrito(e.target.id)
         });
     })
-  }); 
+  });*/
 
 const armarTabla = (prod) => {
     return `<div class="contenedor" id="espacio">
