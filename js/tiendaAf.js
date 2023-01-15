@@ -8,32 +8,15 @@ const carrito = document.querySelector(".carrito")
 let idCarrito = document.querySelector("#carrito")
 const totalcarrito = document.querySelector("#tot-carrito")
 let elementosCarrito = document.querySelector("#elementos_carrito")
-const contenedorMujer = document.querySelector("#contenedor_mujer")
+const contenedorProductos = document.querySelector("#contenedor_productos")
+//const contenedorMujer = document.querySelector("#contenedor_mujer")
+//const contenedorHombre = document.querySelector("#contenedor_hombre")
+//const contenedorAccesorios = document.querySelector("#contenedor_accesorios")
+//const contenedorDeportes = document.querySelector("#contenedor_deportes")
+//const contenedorCalzado = document.querySelector("#contenedor_calzado")
 let eliminar = document.querySelectorAll(".eliminar")
 let carritoJS = []
 let productos1 = []
-
-
-/*fetch("./js/data.json")
-  .then((res) => res.json())
-  .then((data) => {
-    data.forEach((produc) => {
-        const div = document.createElement("div");
-        div.setAttribute("class","contenedor");
-        div.innerHTML = 
-            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
-            <img src="${produc.img}" >
-            <a href="#" class="nombre_producto">${produc.nombre}</a>
-            <a href="#" class="precio"><br>$${produc.precio}</a>`
-        contenedorMujer.append(div) 
-    });
-    agregar = document.querySelectorAll(".agregar")
-    agregar.forEach(el => {
-        el.addEventListener("click", (e) => {
-            agregarACarrito(e.target.id)
-        });
-    })
-  });*/
 
   fetch("./js/data.json")
   .then((res) => res.json())
@@ -47,7 +30,94 @@ let productos1 = []
             <img src="${produc.img}" >
             <a href="#" class="nombre_producto">${produc.nombre}</a>
             <a href="#" class="precio"><br>$${produc.precio}</a>`
-        contenedorMujer.append(div) 
+        contenedorProductos.append(div) 
+    });
+    agregar = document.querySelectorAll(".agregar")
+    agregar.forEach(el => {
+        el.addEventListener("click", (e) => {
+            agregarACarrito(e.target.id)
+        });
+    })
+  }); 
+  fetch("./js/data.json")
+  .then((res) => res.json())
+  .then((data) => {
+    let productosHombre = data.filter(produc => produc.categoria === "HOMBRE")
+    productosHombre.forEach((produc) => {
+        const div = document.createElement("div");
+        div.setAttribute("class","contenedor");
+        div.innerHTML = 
+            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
+            <img src="${produc.img}" >
+            <a href="#" class="nombre_producto">${produc.nombre}</a>
+            <a href="#" class="precio"><br>$${produc.precio}</a>`
+        contenedorProductos.append(div) 
+    });
+    agregar = document.querySelectorAll(".agregar")
+    agregar.forEach(el => {
+        el.addEventListener("click", (e) => {
+            agregarACarrito(e.target.id)
+        });
+    })
+  }); 
+
+  fetch("./js/data.json")
+  .then((res) => res.json())
+  .then((data) => {
+    let productosAccesorios = data.filter(produc => produc.categoria === "ACCESORIOS")
+    productosAccesorios.forEach((produc) => {
+        const div = document.createElement("div");
+        div.setAttribute("class","contenedor");
+        div.innerHTML = 
+            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
+            <img src="${produc.img}" >
+            <a href="#" class="nombre_producto">${produc.nombre}</a>
+            <a href="#" class="precio"><br>$${produc.precio}</a>`
+        contenedorProductos.append(div) 
+    });
+    agregar = document.querySelectorAll(".agregar")
+    agregar.forEach(el => {
+        el.addEventListener("click", (e) => {
+            agregarACarrito(e.target.id)
+        });
+    })
+  }); 
+
+  fetch("./js/data.json")
+  .then((res) => res.json())
+  .then((data) => {
+    let productosCalzado = data.filter(produc => produc.categoria === "CALZADO")
+    productosCalzado.forEach((produc) => {
+        const div = document.createElement("div");
+        div.setAttribute("class","contenedor");
+        div.innerHTML = 
+            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
+            <img src="${produc.img}" >
+            <a href="#" class="nombre_producto">${produc.nombre}</a>
+            <a href="#" class="precio"><br>$${produc.precio}</a>`
+        contenedorProductos.append(div) 
+    });
+    agregar = document.querySelectorAll(".agregar")
+    agregar.forEach(el => {
+        el.addEventListener("click", (e) => {
+            agregarACarrito(e.target.id)
+        });
+    })
+  }); 
+  
+  fetch("./js/data.json")
+  .then((res) => res.json())
+  .then((data) => {
+    let productosDeportes = data.filter(produc => produc.categoria === "DEPORTES")
+    productosDeportes.forEach((produc) => {
+        const div = document.createElement("div");
+        div.setAttribute("class","contenedor");
+        div.innerHTML = 
+            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
+            <img src="${produc.img}" >
+            <a href="#" class="nombre_producto">${produc.nombre}</a>
+            <a href="#" class="precio"><br>$${produc.precio}</a>`
+        contenedorProductos.append(div) 
     });
     agregar = document.querySelectorAll(".agregar")
     agregar.forEach(el => {
