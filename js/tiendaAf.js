@@ -8,12 +8,11 @@ const carrito = document.querySelector(".carrito")
 let idCarrito = document.querySelector("#carrito")
 const totalcarrito = document.querySelector("#tot-carrito")
 let elementosCarrito = document.querySelector("#elementos_carrito")
-const contenedorProductos = document.querySelector("#contenedor_productos")
-//const contenedorMujer = document.querySelector("#contenedor_mujer")
-//const contenedorHombre = document.querySelector("#contenedor_hombre")
-//const contenedorAccesorios = document.querySelector("#contenedor_accesorios")
-//const contenedorDeportes = document.querySelector("#contenedor_deportes")
-//const contenedorCalzado = document.querySelector("#contenedor_calzado")
+const contenedorMujer = document.querySelector("#contenedor_mujer")
+const contenedorHombre = document.querySelector("#contenedor_hombre")
+const contenedorAccesorios = document.querySelector("#contenedor_accesorios")
+const contenedorDeportes = document.querySelector("#contenedor_deportes")
+const contenedorCalzado = document.querySelector("#contenedor_calzado")
 let eliminar = document.querySelectorAll(".eliminar")
 let carritoJS = []
 let productos1 = []
@@ -30,7 +29,7 @@ let productos1 = []
             <img src="${produc.img}" >
             <a href="#" class="nombre_producto">${produc.nombre}</a>
             <a href="#" class="precio"><br>$${produc.precio}</a>`
-        contenedorProductos.append(div) 
+        contenedorMujer.append(div) 
     });
     agregar = document.querySelectorAll(".agregar")
     agregar.forEach(el => {
@@ -51,7 +50,7 @@ let productos1 = []
             <img src="${produc.img}" >
             <a href="#" class="nombre_producto">${produc.nombre}</a>
             <a href="#" class="precio"><br>$${produc.precio}</a>`
-        contenedorProductos.append(div) 
+        contenedorHombre.append(div) 
     });
     agregar = document.querySelectorAll(".agregar")
     agregar.forEach(el => {
@@ -73,7 +72,7 @@ let productos1 = []
             <img src="${produc.img}" >
             <a href="#" class="nombre_producto">${produc.nombre}</a>
             <a href="#" class="precio"><br>$${produc.precio}</a>`
-        contenedorProductos.append(div) 
+        contenedorAccesorios.append(div) 
     });
     agregar = document.querySelectorAll(".agregar")
     agregar.forEach(el => {
@@ -95,7 +94,7 @@ let productos1 = []
             <img src="${produc.img}" >
             <a href="#" class="nombre_producto">${produc.nombre}</a>
             <a href="#" class="precio"><br>$${produc.precio}</a>`
-        contenedorProductos.append(div) 
+        contenedorCalzado.append(div) 
     });
     agregar = document.querySelectorAll(".agregar")
     agregar.forEach(el => {
@@ -117,7 +116,7 @@ let productos1 = []
             <img src="${produc.img}" >
             <a href="#" class="nombre_producto">${produc.nombre}</a>
             <a href="#" class="precio"><br>$${produc.precio}</a>`
-        contenedorProductos.append(div) 
+        contenedorDeportes.append(div) 
     });
     agregar = document.querySelectorAll(".agregar")
     agregar.forEach(el => {
