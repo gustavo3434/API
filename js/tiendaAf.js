@@ -9,7 +9,7 @@ let idCarrito = document.querySelector("#carrito")
 const totalcarrito = document.querySelector("#tot-carrito")
 let elementosCarrito = document.querySelector("#elementos_carrito")
 const contenedorMujer = document.querySelector("#contenedor_mujer")
-let productosMujer = productos.filter(produc => produc.categoria === "MUJER")
+//let productosMujer = productos.filter(produc => produc.categoria === "MUJER")
 let eliminar = document.querySelectorAll(".eliminar")
 let carritoJS = []
 let productos1 = []
@@ -28,7 +28,12 @@ fetch("./js/data.json")
             <a href="#" class="precio"><br>$${produc.precio}</a>`
         contenedorMujer.append(div) 
     });
-    
+    agregar = document.querySelectorAll(".agregar")
+    agregar.forEach(el => {
+        el.addEventListener("click", (e) => {
+            agregarACarrito(e.target.id)
+        });
+    })
   }); 
 
 const armarTabla = (prod) => {
