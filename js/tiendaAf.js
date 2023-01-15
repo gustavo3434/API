@@ -95,11 +95,11 @@ const filtrado = () => { //FUNCION DE FILTRADO DE PRODUCTOS
     let resultados =  []
     if (parametro != "" ) {
         fetch("./js/data.json")
-        .then((res) => res.json())
-        .then((data) => {
-            resultados = data.filter(produ => produ.nombre.includes(parametro) || produ.color.includes(parametro) )
+            .then((res) => res.json())
+            .then((data) => {
+                resultados = data.filter(produ => produ.nombre.includes(parametro) || produ.color.includes(parametro) )
             
-        }); 
+            }); 
     } 
     if (resultados.length > 0) {
         cargarProductos(resultados,filt)
