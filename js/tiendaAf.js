@@ -1,8 +1,8 @@
 
                                 //VARIABLES//
-//let filt = document.querySelector("#filtro")
-//const inputSearch = document.querySelector(".busqueda")
-//const buscar = document.querySelector("#buscar")
+let filt = document.querySelector("#filtro")
+const inputSearch = document.querySelector(".busqueda")
+const buscar = document.querySelector("#buscar")
 let agregar = document.querySelectorAll(".agregar")
 const carrito = document.querySelector(".carrito")
 let idCarrito = document.querySelector("#carrito")
@@ -90,16 +90,21 @@ function eliminarDeCarrito(id){ //FUNCION PARA ELIMINAR PRODUCTOS AL CARRITO
     }
 }
 
-/*const filtrado = () => { //FUNCION DE FILTRADO DE PRODUCTOS 
+const filtrado = () => { //FUNCION DE FILTRADO DE PRODUCTOS 
     let parametro = inputSearch.value.trim().toUpperCase()
     let resultados =  []
     if (parametro != "" ) {
-        resultados = productos.filter(produ => produ.nombre.includes(parametro) || produ.color.includes(parametro) )
+        fetch("./js/data.json")
+        .then((res) => res.json())
+        .then((data) => {
+            resultados = data.filter(produ => produ.nombre.includes(parametro) || produ.color.includes(parametro) )
+            
+        }); 
     } 
     if (resultados.length > 0) {
         cargarProductos(resultados,filt)
     }
-}*/
+}
 
 const cargarProductos = (array,para) => { 
     let tabla = ""
@@ -141,11 +146,11 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
 }
 
 
-/*buscar.addEventListener("click",(e) => {
+buscar.addEventListener("click",(e) => {
     e.preventDefault()
     const ocultar = document.querySelector(".ocultar").style.display = "none";
     filtrado ()
-})*/
+})
 
 function totalCarrito (array) { // FUNCION TOTAL DE CARRITO
     let total = 0
