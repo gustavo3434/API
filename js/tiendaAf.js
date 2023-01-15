@@ -9,7 +9,6 @@ let idCarrito = document.querySelector("#carrito")
 const totalcarrito = document.querySelector("#tot-carrito")
 let elementosCarrito = document.querySelector("#elementos_carrito")
 const contenedorMujer = document.querySelector("#contenedor_mujer")
-//let productosMujer = productos.filter(produc => produc.categoria === "MUJER")
 let eliminar = document.querySelectorAll(".eliminar")
 let carritoJS = []
 let productos1 = []
@@ -110,19 +109,19 @@ const cargarProductos = (array,para) => {
         })
     }
     para.innerHTML = tabla
-    agregar = document.querySelectorAll(".agregar")
+    /*agregar = document.querySelectorAll(".agregar")
     agregar.forEach(el => {
         el.addEventListener("click", (e) => {
             agregarACarrito(e.target.id)
         });
-    })
+    })*/
 }
 
-agregar.forEach(el => {
+/*agregar.forEach(el => {
     el.addEventListener("click", (e) => {
         agregarACarrito(e.target.id)
     });
-})
+})*/
 
 let productosCarrito = []
 function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
