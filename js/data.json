@@ -1,7 +1,7 @@
 [
 {"id":1,"nombre":"GORRA ELEMENT WOLFEBORO","categoria":"ACCESORIOS","color":"NEGRO","precio":11999,"img":"./multimedia/accsesorios/gorra_element.jpg"},
 {"id":2,"nombre":"MOCHILA ZIMITH BOMBIT","categoria":"ACCESORIOS","color":"ROSA","precio":15000,"img":"./multimedia/accsesorios/mochila_zimith.jpg"},
-{"id":3,"nombre":"GORRO C1RCA WALTER","categoria":"ACCESORIOS","color":"ROJO","precio":10000,"asimg":"./multimedia/accsesorios/gorro_c1rca.jpg"},
+{"id":3,"nombre":"GORRO C1RCA WALTER","categoria":"ACCESORIOS","color":"ROJO","precio":10000,"img":"./multimedia/accsesorios/gorro_c1rca.jpg"},
 {"id":4,"nombre":"RELOJ CAPTAIN FIN HURRICANE","categoria":"ACCESORIOS","color":"VERDE","precio":31500,"img":"./multimedia/accsesorios/reloj_captainFin.jpg"},
 {"id":5,"nombre":"GORRO BILLABONG ARCADE","categoria":"ACCESORIOS","color":"NEGRO","precio":6500,"img":"./multimedia/accsesorios/gorro_billabong.jpg"},
 {"id":6,"nombre":"CINTO ZIMITH CUERO MARS","categoria":"ACCESORIOS","color":"MARRON","precio":3500,"img":"./multimedia/accsesorios/cinto_zimith.jpg"},
