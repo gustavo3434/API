@@ -31,8 +31,8 @@ let productos1 = []
             <a href="#" class="precio"><br>$${produc.precio}</a>`
         contenedorMujer.append(div) 
     });
-    agregar = document.querySelectorAll(".agregar")
-    agregar.forEach(el => {
+    let agregar1 = document.querySelectorAll(".agregar")
+    agregar1.forEach(el => {
         el.addEventListener("click", (e) => {
             agregarACarrito(e.target.id)
         });
@@ -52,8 +52,8 @@ let productos1 = []
             <a href="#" class="precio"><br>$${produc.precio}</a>`
         contenedorHombre.append(div) 
     });
-    agregar = document.querySelectorAll(".agregar")
-    agregar.forEach(el => {
+    let agregar2 = document.querySelectorAll(".agregar")
+    agregar2.forEach(el => {
         el.addEventListener("click", (e) => {
             agregarACarrito(e.target.id)
         });
@@ -74,8 +74,8 @@ let productos1 = []
             <a href="#" class="precio"><br>$${produc.precio}</a>`
         contenedorAccesorios.append(div) 
     });
-    agregar = document.querySelectorAll(".agregar")
-    agregar.forEach(el => {
+    let agregar3 = document.querySelectorAll(".agregar")
+    agregar3.forEach(el => {
         el.addEventListener("click", (e) => {
             agregarACarrito(e.target.id)
         });
@@ -96,8 +96,8 @@ let productos1 = []
             <a href="#" class="precio"><br>$${produc.precio}</a>`
         contenedorCalzado.append(div) 
     });
-    agregar = document.querySelectorAll(".agregar")
-    agregar.forEach(el => {
+    let agregar4 = document.querySelectorAll(".agregar")
+    agregar4.forEach(el => {
         el.addEventListener("click", (e) => {
             agregarACarrito(e.target.id)
         });
@@ -118,8 +118,8 @@ let productos1 = []
             <a href="#" class="precio"><br>$${produc.precio}</a>`
         contenedorDeportes.append(div) 
     });
-    agregar = document.querySelectorAll(".agregar")
-    agregar.forEach(el => {
+    let agregar5 = document.querySelectorAll(".agregar")
+    agregar5.forEach(el => {
         el.addEventListener("click", (e) => {
             agregarACarrito(e.target.id)
         });
