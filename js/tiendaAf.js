@@ -1,6 +1,6 @@
 
                                 //VARIABLES//
-let filt = document.querySelector("#filtro")
+//let filt = document.querySelector("#filtro")
 //const inputSearch = document.querySelector(".busqueda")
 //const buscar = document.querySelector("#buscar")
 let agregar = document.querySelectorAll(".agregar")
@@ -64,15 +64,15 @@ const cargarCarrito = (array,para) => {
         })
     }
     para.innerHTML = tabla
-    eliminar = document.querySelectorAll(".eliminar")
+    /*eliminar = document.querySelectorAll(".eliminar")
     eliminar.forEach(el => {
         el.addEventListener("click", (e) => {
             eliminarDeCarrito(e.target.id)
         });
-    })
+    })*/
 }
 
-function eliminarDeCarrito(id){ //FUNCION PARA ELIMINAR PRODUCTOS AL CARRITO
+/*function eliminarDeCarrito(id){ //FUNCION PARA ELIMINAR PRODUCTOS AL CARRITO
     let productoEncontrado = carritoJS.find(prod => prod.id === parseInt(id))
     carritoJS = carritoJS.filter((item) => item !== productoEncontrado)
     if (carritoJS.length > 0) {
@@ -89,7 +89,7 @@ function eliminarDeCarrito(id){ //FUNCION PARA ELIMINAR PRODUCTOS AL CARRITO
         idCarrito.appendChild(carritoVacio)
         ocu = document.querySelector(".scrols").style.display = "none"
     }
-}
+}*/
 
 /*const filtrado = () => { //FUNCION DE FILTRADO DE PRODUCTOS 
     let parametro = inputSearch.value.trim().toUpperCase()
