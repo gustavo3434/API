@@ -100,10 +100,10 @@ const filtrado = () => { //FUNCION DE FILTRADO DE PRODUCTOS
                 resultados = data.filter(produ => produ.nombre.includes(parametro) || produ.color.includes(parametro) )
             
             }); 
+            if (resultados.length > 0) {
+                cargarProductos(resultados,filt)
+            }
     } 
-    if (resultados.length > 0) {
-        cargarProductos(resultados,filt)
-    }
 }
 
 const cargarProductos = (array,para) => { 
