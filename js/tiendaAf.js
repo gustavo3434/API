@@ -25,19 +25,18 @@ fetch("./js/data.json")
             `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
             <img src="${produc.img}" >
             <a href="#" class="nombre_producto">${produc.nombre}</a>
-            <a href="#" class="precio"><br>$${produc.precio}</a>`;
-        contenedorMujer.append(div);
+            <a href="#" class="precio"><br>$${produc.precio}</a>`
+        contenedorMujer.append(div) 
     });
     agregar = document.querySelectorAll(".agregar")
     agregar.forEach(el => {
         el.addEventListener("click", (e) => {
-            agregarACarrito(e.target.id) 
+            agregarACarrito(e.target.id)
         });
     })
-    
   }); 
 
-const armarTabla = (prod) => {
+  const armarTabla = (prod) => {
     return `<div class="contenedor" id="espacio">
                 <button type="button" id="${prod.id}" class="agregar btn btn-dark btn-sm">+</button>
                 <img src="${prod.img}" >
@@ -56,8 +55,6 @@ const armarCarrito = (prod) => {
 }
 
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };// FUNCION PARA GUARDAR DATOS EN LOCALSTORAGE 
-
-
 
 const cargarCarrito = (array,para) => {
     let tabla = ""
@@ -143,6 +140,7 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
         
 }
 
+
 buscar.addEventListener("click",(e) => {
     e.preventDefault()
     const ocultar = document.querySelector(".ocultar").style.display = "none";
@@ -170,4 +168,9 @@ if (carritoJS.length > 0) {
     idCarrito.appendChild(carritoVacio)
     ocu = document.querySelector(".scrol").style.display = "none"
 }
+
+
+
+
+
 
