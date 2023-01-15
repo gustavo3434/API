@@ -109,19 +109,19 @@ const cargarProductos = (array,para) => {
         })
     }
     para.innerHTML = tabla
-    /*agregar = document.querySelectorAll(".agregar")
+    agregar = document.querySelectorAll(".agregar")
     agregar.forEach(el => {
         el.addEventListener("click", (e) => {
             agregarACarrito(e.target.id)
         });
-    })*/
+    })
 }
 
-agregar.forEach(el => {
+/*agregar.forEach(el => {
     el.addEventListener("click", (e) => {
         agregarACarrito(e.target.id)
     });
-})
+})*/
 
 let productosCarrito = []
 function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
@@ -133,9 +133,10 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
             productosCarrito.map(el => el.cantidad += 1)
         } else{
             productosCarrito.push(productoEncontrado)
-            }
-        }); 
+        }
         guardarLocal("listaProductos",JSON.stringify(productosCarrito.concat(carritoJS)));
+        }); 
+        
         
 }
 
