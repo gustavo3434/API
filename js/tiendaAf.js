@@ -36,7 +36,7 @@ fetch("./js/data.json")
     })
   }); 
 
-  const armarTabla = (prod) => {
+const armarTabla = (prod) => {
     return `<div class="contenedor" id="espacio">
                 <button type="button" id="${prod.id}" class="agregar btn btn-dark btn-sm">+</button>
                 <img src="${prod.img}" >
@@ -118,11 +118,11 @@ const cargarProductos = (array,para) => {
     })
 }
 
-agregar.forEach(el => {
+/*agregar.forEach(el => {
     el.addEventListener("click", (e) => {
         agregarACarrito(e.target.id)
     });
-})
+})*/
 
 let productosCarrito = []
 function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
@@ -168,9 +168,3 @@ if (carritoJS.length > 0) {
     idCarrito.appendChild(carritoVacio)
     ocu = document.querySelector(".scrol").style.display = "none"
 }
-
-
-
-
-
-
