@@ -14,10 +14,32 @@ let carritoJS = []
 let productos1 = []
 
 
-fetch("./js/data.json")
+/*fetch("./js/data.json")
   .then((res) => res.json())
   .then((data) => {
     data.forEach((produc) => {
+        const div = document.createElement("div");
+        div.setAttribute("class","contenedor");
+        div.innerHTML = 
+            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
+            <img src="${produc.img}" >
+            <a href="#" class="nombre_producto">${produc.nombre}</a>
+            <a href="#" class="precio"><br>$${produc.precio}</a>`
+        contenedorMujer.append(div) 
+    });
+    agregar = document.querySelectorAll(".agregar")
+    agregar.forEach(el => {
+        el.addEventListener("click", (e) => {
+            agregarACarrito(e.target.id)
+        });
+    })
+  });*/
+
+  fetch("./js/data.json")
+  .then((res) => res.json())
+  .then((data) => {
+    let productosMujer = data.filter(produc => produc.categoria === "MUJER")
+    productosMujer.forEach((produc) => {
         const div = document.createElement("div");
         div.setAttribute("class","contenedor");
         div.innerHTML = 
@@ -97,8 +119,7 @@ const filtrado = () => { //FUNCION DE FILTRADO DE PRODUCTOS
         fetch("./js/data.json")
             .then((res) => res.json())
             .then((data) => {
-                resultados = data.filter(produ => produ.nombre.includes(parametro) || produ.color.includes(parametro) )
-                console.log(resultados)
+                resultados = data.filter(produ => produ.nombre.includes(parametro) || produ.color.includes(parametro))
                 if (resultados.length > 0) {
                     cargarProductos(resultados,filt)
                 }
