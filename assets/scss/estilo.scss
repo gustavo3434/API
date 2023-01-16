@@ -232,11 +232,9 @@ h2{
     /* Logos de IG FC del Footer*/
     .ig{
         margin-left: 40%;
-        
     }
     .face{ 
         margin-left: 50%;
-        
     }
 }
                             /*Responsive < 768px*/
@@ -337,9 +335,7 @@ h2{
                 margin: 12%;
             }
         }
-        
     }
-
     /*---------------------*/
     .consultas label , .consultas input , .consultas textarea{
         width: 60%;
@@ -352,11 +348,9 @@ h2{
     /* Logos de IG FC del Footer*/
     .ig{
         margin-left: 40%;
-        
     }
     .face{ 
         margin-left: 50%;
-        
     }
 }
                                 /*Responsive < 517px*/
@@ -368,7 +362,6 @@ h2{
             @include sizes(375px,50%);
             text-align: center;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-        
         }
     }
 }
@@ -509,5 +502,4 @@ h2{
             right: 35%;
         }
     }
-    
 }
