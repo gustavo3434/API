@@ -210,10 +210,10 @@ if (carritoJS.length > 0) {
     cargarCarrito(carritoJS,elementosCarrito)
     totalCarrito(carritoJS)
     totalcarrito.innerText = totalCarrito(carritoJS)
-    let comprar = document.querySelector(".btn-comprar")
-    const a = document.createElement("a");
-    a.setAttribute("class","btn btn-dark");
-    comprar.append(a)
+    let comprar = document.querySelector(".ocultarTot")
+    const div1 = document.createElement("div");
+    div1.innerText = '<a class="btn btn-dark" href="#" role="button">COMPRAR</a>'
+    comprar.append(div1)
 
 }else {
     ocul = document.querySelector(".ocultarTot").style.display = "none"
