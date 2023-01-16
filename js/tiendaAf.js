@@ -77,13 +77,13 @@ let productos1 = []
             <a href="#" class="precio"><br>$${produc.precio}</a>`
         contenedorDeportes.append(div) 
         });
-  }); 
-  let agregar1 = document.querySelectorAll(".agregar")
+    let agregar1 = document.querySelectorAll(".agregar")
     agregar1.forEach(el => {
         el.addEventListener("click", (e) => {
             agregarACarrito(e.target.id)
         });
     })
+  }); 
   /*fetch("./js/data.json")
   .then((res) => res.json())
   .then((data) => {
@@ -271,7 +271,7 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
         .then((res) => res.json())
         .then((data) => {
             let productoEncontrado = data.find(prod => prod.id === parseInt(id))
-        if(carritoJS.some((el) => el.id == productoEncontrado.id)){
+        if((productosCarrito.some((el) => el.id == productoEncontrado.id)) || (carritoJS.some((el) => el.id == productoEncontrado.id))){
             productosCarrito.map(el => el.cantidad += 1)
         } else{
             productosCarrito.push(productoEncontrado)
