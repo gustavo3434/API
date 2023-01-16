@@ -212,7 +212,7 @@ if (carritoJS.length > 0) {
     totalcarrito.innerText = totalCarrito(carritoJS)
     let comprar = document.querySelector(".ocultarTot")
     const div1 = document.createElement("div");
-    div1.innerText = '<a class="btn btn-dark" href="#" role="button">COMPRAR</a>'
+    div1.innerHTML = '<a class="btn btn-dark" href="#" role="button">COMPRAR</a>'
     comprar.append(div1)
 
 }else {
