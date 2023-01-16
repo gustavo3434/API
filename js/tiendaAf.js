@@ -31,7 +31,7 @@ let productos1 = []
             <a href="#" class="nombre_producto">${produc.nombre}</a>
             <a href="#" class="precio"><br>$${produc.precio}</a>`
         contenedorMujer.append(div) 
-        });
+    });
 
     let productosHombre = data.filter(produc => produc.categoria === "HOMBRE")
     productosHombre.forEach((produc) => {
@@ -77,13 +77,13 @@ let productos1 = []
             <a href="#" class="precio"><br>$${produc.precio}</a>`
         contenedorDeportes.append(div) 
         });
-    let agregar1 = document.querySelectorAll(".agregar")
+  }); 
+  let agregar1 = document.querySelectorAll(".agregar")
     agregar1.forEach(el => {
         el.addEventListener("click", (e) => {
             agregarACarrito(e.target.id)
         });
     })
-  }); 
   /*fetch("./js/data.json")
   .then((res) => res.json())
   .then((data) => {
