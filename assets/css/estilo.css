@@ -139,58 +139,6 @@ img {
   margin-bottom: 10%;
 }
 
-.galeria_carrito {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.galeria_carrito .contenedor {
-  position: relative;
-  display: inline-block;
-  text-align: center;
-}
-.galeria_carrito div {
-  box-shadow: 3px 5px 10px 3px rgba(128, 128, 128, 0.597);
-  height: 360px;
-  width: 25%;
-  text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.galeria_carrito div a {
-  text-decoration: none;
-  font-size: 0.8rem;
-  color: gray;
-  bottom: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.galeria_carrito div a:hover {
-  color: rgba(128, 128, 128, 0.597);
-}
-.galeria_carrito div img {
-  height: 68%;
-  width: 75%;
-  margin: 12%;
-  border-style: double;
-  color: rgba(128, 128, 128, 0.215);
-  box-shadow: 5px 8px 12px black;
-  cursor: pointer;
-}
-.galeria_carrito div img:hover {
-  border-style: double;
-  color: gray;
-  box-shadow: 18px 20px 60px black;
-  transition: all 0.5s ease-in-out;
-}
-.galeria_carrito div div {
-  height: 8%;
-  width: 40%;
-}
-.galeria_carrito div .precio {
-  color: black;
-  font-size: 0.9rem;
-  font-weight: bold;
-}
-
 /*--------------------------------*/
 /* Formulario de promociones */
 .registro {
