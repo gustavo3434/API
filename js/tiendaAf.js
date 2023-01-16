@@ -84,93 +84,6 @@ let productos1 = []
         });
     })
   }); 
-  /*fetch("./js/data.json")
-  .then((res) => res.json())
-  .then((data) => {
-    let productosHombre = data.filter(produc => produc.categoria === "HOMBRE")
-    productosHombre.forEach((produc) => {
-        const div = document.createElement("div");
-        div.setAttribute("class","contenedor");
-        div.innerHTML = 
-            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
-            <img src="${produc.img}" >
-            <a href="#" class="nombre_producto">${produc.nombre}</a>
-            <a href="#" class="precio"><br>$${produc.precio}</a>`
-        contenedorHombre.append(div) 
-    });
-    let agregar2 = document.querySelectorAll(".agregar")
-    agregar2.forEach(el => {
-        el.addEventListener("click", (e) => {
-            agregarACarrito(e.target.id)
-        });
-    })
-  }); 
-
-  fetch("./js/data.json")
-  .then((res) => res.json())
-  .then((data) => {
-    let productosAccesorios = data.filter(produc => produc.categoria === "ACCESORIOS")
-    productosAccesorios.forEach((produc) => {
-        const div = document.createElement("div");
-        div.setAttribute("class","contenedor");
-        div.innerHTML = 
-            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
-            <img src="${produc.img}" >
-            <a href="#" class="nombre_producto">${produc.nombre}</a>
-            <a href="#" class="precio"><br>$${produc.precio}</a>`
-        contenedorAccesorios.append(div) 
-    });
-    let agregar3 = document.querySelectorAll(".agregar")
-    agregar3.forEach(el => {
-        el.addEventListener("click", (e) => {
-            agregarACarrito(e.target.id)
-        });
-    })
-  }); 
-
-  fetch("./js/data.json")
-  .then((res) => res.json())
-  .then((data) => {
-    let productosCalzado = data.filter(produc => produc.categoria === "CALZADO")
-    productosCalzado.forEach((produc) => {
-        const div = document.createElement("div");
-        div.setAttribute("class","contenedor");
-        div.innerHTML = 
-            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
-            <img src="${produc.img}" >
-            <a href="#" class="nombre_producto">${produc.nombre}</a>
-            <a href="#" class="precio"><br>$${produc.precio}</a>`
-        contenedorCalzado.append(div) 
-    });
-    let agregar4 = document.querySelectorAll(".agregar")
-    agregar4.forEach(el => {
-        el.addEventListener("click", (e) => {
-            agregarACarrito(e.target.id)
-        });
-    })
-  }); 
-  
-  fetch("./js/data.json")
-  .then((res) => res.json())
-  .then((data) => {
-    let productosDeportes = data.filter(produc => produc.categoria === "DEPORTES")
-    productosDeportes.forEach((produc) => {
-        const div = document.createElement("div");
-        div.setAttribute("class","contenedor");
-        div.innerHTML = 
-            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
-            <img src="${produc.img}" >
-            <a href="#" class="nombre_producto">${produc.nombre}</a>
-            <a href="#" class="precio"><br>$${produc.precio}</a>`
-        contenedorDeportes.append(div) 
-    });
-    let agregar5 = document.querySelectorAll(".agregar")
-    agregar5.forEach(el => {
-        el.addEventListener("click", (e) => {
-            agregarACarrito(e.target.id)
-        });
-    })
-  });*/
 
 const armarTabla = (prod) => {
     return `<div class="contenedor" id="espacio">
@@ -259,11 +172,6 @@ const cargarProductos = (array,para) => {
     })
 }
 
-/*agregar.forEach(el => {
-    el.addEventListener("click", (e) => {
-        agregarACarrito(e.target.id)
-    });
-})*/
 
 let productosCarrito = []
 function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
@@ -302,6 +210,11 @@ if (carritoJS.length > 0) {
     cargarCarrito(carritoJS,elementosCarrito)
     totalCarrito(carritoJS)
     totalcarrito.innerText = totalCarrito(carritoJS)
+    let comprar = document.querySelector(".btn-comprar")
+    const a = document.createElement("a");
+    a.setAttribute("class","btn btn-dark");
+    comprar.append(a)
+
 }else {
     ocul = document.querySelector(".ocultarTot").style.display = "none"
     let carritoVacio = document.createElement(`h2`)
