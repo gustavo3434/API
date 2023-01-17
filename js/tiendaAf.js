@@ -180,7 +180,7 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
         .then((data) => {
             let productoEncontrado = data.find(prod => prod.id === parseInt(id))
         if((productosCarrito.some((el) => el.id == productoEncontrado.id)) || (carritoJS.some((el) => el.id == productoEncontrado.id))){
-            productosCarrito.map(el => el.cantidad += 1)
+            carritoJS.map(el => el.cantidad += 1)
         } else{
             productosCarrito.push(productoEncontrado)
         }
