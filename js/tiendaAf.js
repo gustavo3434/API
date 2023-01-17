@@ -14,6 +14,7 @@ const contenedorAccesorios = document.querySelector("#contenedor_accesorios")
 const contenedorDeportes = document.querySelector("#contenedor_deportes")
 const contenedorCalzado = document.querySelector("#contenedor_calzado")
 let eliminar = document.querySelectorAll(".eliminar")
+let confirmar = document.querySelector(".confirmar")
 let carritoJS = []
 let productos1 = []
 
@@ -103,6 +104,10 @@ const armarCarrito = (prod) => {
             </div>`
 }
 
+confirmar.addEventListener("click",() => {
+    alert("Ariel")
+})
+
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };// FUNCION PARA GUARDAR DATOS EN LOCALSTORAGE 
 
 const cargarCarrito = (array,para) => {
@@ -180,7 +185,7 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
         .then((data) => {
             let productoEncontrado = data.find(prod => prod.id === parseInt(id))
         if((productosCarrito.some((el) => el.id == productoEncontrado.id)) || (carritoJS.some((el) => el.id == productoEncontrado.id))){
-            carritoJS.map(el => el.cantidad += 1)
+            productosCarrito.map(el => el.cantidad += 1)
         } else{
             productosCarrito.push(productoEncontrado)
         }
