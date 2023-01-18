@@ -19,10 +19,10 @@ confirmar.addEventListener("click",(e) => {
           })
           carritoJS = []
           guardarLocal("listaProductos", JSON.stringify(carritoJS));
-          setTimeout (redireccionar, 1400);
+          setTimeout (redireccionar, 1900);
         } else {
           swal("La compra fue cancelada");
-          setTimeout (redireccionar, 1400);
+          setTimeout (redireccionar, 1900);
         }
       });
       
