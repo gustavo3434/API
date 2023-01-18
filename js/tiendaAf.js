@@ -204,7 +204,7 @@ function totalCarrito (array) { // FUNCION TOTAL DE CARRITO
 }
 
 carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
-if (carritoJS.length > 0) {
+/*if (carritoJS.length > 0) {
     cargarCarrito(carritoJS,elementosCarrito)
     totalCarrito(carritoJS)
     totalcarrito.innerText = totalCarrito(carritoJS)
@@ -220,4 +220,4 @@ if (carritoJS.length > 0) {
     `<p class="centrar">El carrito de compras está vacío.</p>`
     idCarrito.appendChild(carritoVacio)
     ocu = document.querySelector(".scrol").style.display = "none"
-}
+}*/

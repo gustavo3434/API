@@ -1,3 +1,10 @@
+const carrito = document.querySelector(".carrito")
+let idCarrito = document.querySelector("#carrito")
+let eliminar = document.querySelectorAll(".eliminar")
+let agregar = document.querySelectorAll(".agregar")
+const totalcarrito = document.querySelector("#tot-carrito")
+let elementosCarrito = document.querySelector("#elementos_carrito")
+
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };// FUNCION PARA GUARDAR DATOS EN LOCALSTORAGE 
 
 const cargarProductos = (array,para) => { 
