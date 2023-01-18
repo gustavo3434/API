@@ -11,7 +11,6 @@ const contenedorAccesorios = document.querySelector("#contenedor_accesorios")
 const contenedorDeportes = document.querySelector("#contenedor_deportes")
 const contenedorCalzado = document.querySelector("#contenedor_calzado")
 let eliminar = document.querySelectorAll(".eliminar")
-let parametro = inputSearch.value.trim().toUpperCase()
 let carritoJS = []
 let productos1 = []
 
@@ -188,6 +187,7 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
 
 buscar.addEventListener("click",(e) => {
     e.preventDefault()
+    let parametro = inputSearch.value.trim().toUpperCase()
     const ocultar = document.querySelector(".ocultar").style.display = "none";
     filtrado (parametro)
 })
