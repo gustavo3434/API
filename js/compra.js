@@ -14,7 +14,7 @@ confirmar.addEventListener("click",(e) => {
       .then((will) => {
         function redireccionar(){window.location="./index.html";}
         if (will) {
-          swal("La compra fue finalizada con exito", {
+          swal("La compra fue finalizada con exito, !GRACIAS POR ELEGIR TIENDA AF!", {
             icon: "success",
           })
           carritoJS = []
