@@ -5,9 +5,6 @@ const inputSearch = document.querySelector(".busqueda")
 const buscar = document.querySelector("#buscar")
 let agregar = document.querySelectorAll(".agregar")
 const carrito = document.querySelector(".carrito")
-let idCarrito = document.querySelector("#carrito")
-const totalcarrito = document.querySelector("#tot-carrito")
-let elementosCarrito = document.querySelector("#elementos_carrito")
 const contenedorMujer = document.querySelector("#contenedor_mujer")
 const contenedorHombre = document.querySelector("#contenedor_hombre")
 const contenedorAccesorios = document.querySelector("#contenedor_accesorios")
@@ -204,20 +201,3 @@ function totalCarrito (array) { // FUNCION TOTAL DE CARRITO
 }
 
 carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
-/*if (carritoJS.length > 0) {
-    cargarCarrito(carritoJS,elementosCarrito)
-    totalCarrito(carritoJS)
-    totalcarrito.innerText = totalCarrito(carritoJS)
-    let comprar = document.querySelector(".ocultarTot")
-    const div1 = document.createElement("div");
-    div1.innerHTML = '<a class="btn btn-dark" href="./formulario_compra.html" role="button">COMPRAR</a>'
-    comprar.append(div1)
-
-}else {
-    ocul = document.querySelector(".ocultarTot").style.display = "none"
-    let carritoVacio = document.createElement(`h2`)
-    carritoVacio.innerHTML = 
-    `<p class="centrar">El carrito de compras está vacío.</p>`
-    idCarrito.appendChild(carritoVacio)
-    ocu = document.querySelector(".scrol").style.display = "none"
-}*/
