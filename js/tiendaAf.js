@@ -11,6 +11,7 @@ const contenedorAccesorios = document.querySelector("#contenedor_accesorios")
 const contenedorDeportes = document.querySelector("#contenedor_deportes")
 const contenedorCalzado = document.querySelector("#contenedor_calzado")
 let eliminar = document.querySelectorAll(".eliminar")
+let parametro = inputSearch.value.trim().toUpperCase()
 let carritoJS = []
 let productos1 = []
 
@@ -139,8 +140,7 @@ function eliminarDeCarrito(id){ //FUNCION PARA ELIMINAR PRODUCTOS AL CARRITO
     }
 }
 
-const filtrado = () => { //FUNCION DE FILTRADO DE PRODUCTOS 
-    let parametro = inputSearch.value.trim().toUpperCase()
+const filtrado = (parametro) => { //FUNCION DE FILTRADO DE PRODUCTOS 
     let resultados =  []
     if (parametro != "" ) {
         fetch("./js/data.json")
@@ -189,7 +189,7 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
 buscar.addEventListener("click",(e) => {
     e.preventDefault()
     const ocultar = document.querySelector(".ocultar").style.display = "none";
-    filtrado ()
+    filtrado (parametro)
 })
 
 function totalCarrito (array) { // FUNCION TOTAL DE CARRITO
@@ -201,3 +201,15 @@ function totalCarrito (array) { // FUNCION TOTAL DE CARRITO
 }
 
 carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
+
+
+
+function ShowSelected()
+{
+    /* Para obtener el valor */
+    let fil = document.querySelector(".sub").value
+    /* Para obtener el texto */
+    let filt = document.querySelector(".sub")
+    var selected = filt.options[filt.selectedIndex].text;
+}
+
