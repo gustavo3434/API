@@ -7,20 +7,15 @@ let elementosCarrito = document.querySelector("#elementos_carrito")
 
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };// FUNCION PARA GUARDAR DATOS EN LOCALSTORAGE 
 
-const cargarProductos = (array,para) => { 
-    let tabla = ""
-    if (array.length > 0 ) {
-        array.forEach((produc) => {
-            tabla += armarTabla(produc)
-        })
-    }
-    para.innerHTML = tabla
-    agregar = document.querySelectorAll(".agregar")
-    agregar.forEach(el => {
-        el.addEventListener("click", (e) => {
-            agregarACarrito(e.target.id)
-        });
-    })
+carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
+
+const armarCarrito = (prod) => {
+    return `<div class="contenedor" id="espacio">
+                <button type="button" id="${prod.id}" class="eliminar btn btn-danger btn-sm">eliminar</button>
+                <img src="${prod.img}" >
+                <a href="#" class="nombre_producto">${prod.nombre}</a>
+                <a href="#" class="precio"><br>$${prod.precio}</a>
+            </div>`
 }
 
 const cargarCarrito = (array,para) => {
@@ -66,7 +61,7 @@ function totalCarrito (array) { // FUNCION TOTAL DE CARRITO
     return total
 }
 
-carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
+
 if (carritoJS.length > 0) {
     cargarCarrito(carritoJS,elementosCarrito)
     totalCarrito(carritoJS)
