@@ -14,7 +14,6 @@ const contenedorAccesorios = document.querySelector("#contenedor_accesorios")
 const contenedorDeportes = document.querySelector("#contenedor_deportes")
 const contenedorCalzado = document.querySelector("#contenedor_calzado")
 let eliminar = document.querySelectorAll(".eliminar")
-let confirmar = document.querySelector(".confirmar")
 let carritoJS = []
 let productos1 = []
 
@@ -104,9 +103,7 @@ const armarCarrito = (prod) => {
             </div>`
 }
 
-confirmar.addEventListener("click",() => {
-    alert("Ariel")
-})
+
 
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };// FUNCION PARA GUARDAR DATOS EN LOCALSTORAGE 
 
