@@ -6,7 +6,7 @@ const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };//
 
 confirmar.addEventListener("click",(e) => {
     swal({
-        title: "ariel",
+        title: "Tieanda AF",
         text: nombre.value.trim()+ " "+apellido.value.trim()+" desea finalizar la compra?",
         buttons: true,
         dangerMode: true,
