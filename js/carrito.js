@@ -1,5 +1,21 @@
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };// FUNCION PARA GUARDAR DATOS EN LOCALSTORAGE 
 
+const cargarProductos = (array,para) => { 
+    let tabla = ""
+    if (array.length > 0 ) {
+        array.forEach((produc) => {
+            tabla += armarTabla(produc)
+        })
+    }
+    para.innerHTML = tabla
+    agregar = document.querySelectorAll(".agregar")
+    agregar.forEach(el => {
+        el.addEventListener("click", (e) => {
+            agregarACarrito(e.target.id)
+        });
+    })
+}
+
 const cargarCarrito = (array,para) => {
     let tabla = ""
     if (array.length > 0 ) {
