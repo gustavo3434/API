@@ -107,7 +107,7 @@ const armarCarrito = (prod) => {
 
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };// FUNCION PARA GUARDAR DATOS EN LOCALSTORAGE 
 
-const cargarCarrito = (array,para) => {
+/*const cargarCarrito = (array,para) => {
     let tabla = ""
     if (array.length > 0 ) {
         array.forEach((produc) => {
@@ -121,9 +121,9 @@ const cargarCarrito = (array,para) => {
             eliminarDeCarrito(e.target.id)
         });
     })
-}
+}*/
 
-function eliminarDeCarrito(id){ //FUNCION PARA ELIMINAR PRODUCTOS AL CARRITO
+/*function eliminarDeCarrito(id){ //FUNCION PARA ELIMINAR PRODUCTOS AL CARRITO
     let productoEncontrado = carritoJS.find(prod => prod.id === parseInt(id))
     carritoJS = carritoJS.filter((item) => item !== productoEncontrado)
     if (carritoJS.length > 0) {
@@ -140,7 +140,7 @@ function eliminarDeCarrito(id){ //FUNCION PARA ELIMINAR PRODUCTOS AL CARRITO
         idCarrito.appendChild(carritoVacio)
         ocu = document.querySelector(".scrols").style.display = "none"
     }
-}
+}*/
 
 const filtrado = () => { //FUNCION DE FILTRADO DE PRODUCTOS 
     let parametro = inputSearch.value.trim().toUpperCase()
@@ -154,7 +154,6 @@ const filtrado = () => { //FUNCION DE FILTRADO DE PRODUCTOS
                     cargarProductos(resultados,filt)
                 }
             }); 
-            
     } 
 }
 
@@ -188,10 +187,7 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
         }
         guardarLocal("listaProductos",JSON.stringify(productosCarrito.concat(carritoJS)));
         }); 
-        
-        
 }
-
 
 buscar.addEventListener("click",(e) => {
     e.preventDefault()
@@ -199,7 +195,7 @@ buscar.addEventListener("click",(e) => {
     filtrado ()
 })
 
-function totalCarrito (array) { // FUNCION TOTAL DE CARRITO
+/*function totalCarrito (array) { // FUNCION TOTAL DE CARRITO
     let total = 0
     for (const producto of array) {
         total += producto.precio;
@@ -224,4 +220,4 @@ if (carritoJS.length > 0) {
     `<p class="centrar">El carrito de compras está vacío.</p>`
     idCarrito.appendChild(carritoVacio)
     ocu = document.querySelector(".scrol").style.display = "none"
-}
+}*/
