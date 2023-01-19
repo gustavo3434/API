@@ -203,17 +203,30 @@ function totalCarrito (array) { // FUNCION TOTAL DE CARRITO
 carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
 
 
-
 function ShowSelected()
 {
-    /* Para obtener el valor */
-    //let fil = document.querySelector(".sub").value
-    /* Para obtener el texto */
-    let filt = document.querySelector(".categ")
-    let selected = filt.options[filt.selectedIndex].text.toUpperCase()
-    if (selected =! "PRODUCTOS") {
-        filtrado(selected)
-    }
+    let filtr = document.querySelector(".categ")
+    let filt = document.querySelectorAll(".categ")
+    let selected = filtr.options[filtr.selectedIndex].text.toUpperCase()
+    filt.forEach(el => {
+        el.addEventListener("click", (e) => {
+            let categ = (e.target.id)
+            if (selected =! "PRODUCTOS") {
+                let resultados =  []
+                fetch("./js/data.json")
+                    .then((res) => res.json())
+                    .then((data) => {
+                        resultados = data.filter(produ => produ.categoria  ===(categ) || produ.nombre.includes(selected))
+                        if (resultados.length > 0) {
+                                cargarProductos(resultados,filt)
+                        }
+                    }); 
+                
+            }
+        });
+    })
+    
+    
 }
 
-ShowSelected()
+
