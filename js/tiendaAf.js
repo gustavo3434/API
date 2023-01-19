@@ -214,7 +214,7 @@ function ShowSelected()
                 el.addEventListener("click", (e) => {
                     let filtr = document.querySelector(".categ")
                     let selected = filtr.options[filtr.selectedIndex].text.toUpperCase()
-                    resultados = data.filter(produ.nombre.includes(selected))
+                    resultados = data.filter(produ =>  produ.nombre.includes(selected))
                     const ocultar = document.querySelector(".ocultar").style.display = "none";
                     cargarProductos(resultados,filt)
                 });
