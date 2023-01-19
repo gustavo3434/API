@@ -205,11 +205,22 @@ carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALST
 
 function ShowSelected()
 {
-    let filtr = document.querySelector(".categ")
-    let filt = document.querySelectorAll(".categ")
-    let selected = filtr.options[filtr.selectedIndex].text.toUpperCase()
-    const ocultar = document.querySelector(".ocultar").style.display = "none";
-    filtrado(selected)
+    let resultados =  []
+    fetch("./js/data.json")
+        .then((res) => res.json())
+        .then((data) => {
+            let filt = document.querySelectorAll(".categ")
+            filt.forEach(el => {
+                el.addEventListener("click", (e) => {
+                    let categ = (e.target.id)
+                    let filtr = document.querySelector(".categ")
+                    let selected = filtr.options[filtr.selectedIndex].text.toUpperCase()
+                    resultados = data.filter(produ => produ.categoria.includes(categ) || produ.nombre.includes(selected))
+                    const ocultar = document.querySelector(".ocultar").style.display = "none";
+                    cargarProductos(resultados,filt)
+                });
+            })
+        }); 
 }
 
 
