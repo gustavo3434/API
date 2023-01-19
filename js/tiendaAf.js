@@ -217,12 +217,10 @@ function ShowSelected()
                     .then((res) => res.json())
                     .then((data) => {
                         resultados = data.filter(produ => produ.categoria  ===(categ) || produ.nombre.includes(selected))
-                        if (resultados.length > 0) {
-                            const ocultar = document.querySelector(".ocultar").style.display = "none";
-                                cargarProductos(resultados,filt)
-                        }
+                        const ocultar = document.querySelector(".ocultar").style.display = "none";
+                        cargarProductos(resultados,filt)
+                        
                     }); 
-                
             }
         });
     })
