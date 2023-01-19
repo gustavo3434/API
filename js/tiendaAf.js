@@ -203,7 +203,7 @@ function totalCarrito (array) { // FUNCION TOTAL DE CARRITO
 carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
 
 
-function ShowSelected()
+/*function ShowSelected()
 {
     let filtr = document.querySelector(".categ")
     let filt = document.querySelectorAll(".categ")
@@ -226,6 +226,6 @@ function ShowSelected()
     })
     
     
-}
+}*/
 
 
