@@ -206,15 +206,17 @@ carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALST
 function ShowSelected()
 {
     let resultados =  []
+    let resultados1 = []
     fetch("./js/data.json")
         .then((res) => res.json())
         .then((data) => {
             let categ = document.getElementsByClassName("categ")[0].id
             let filtr = document.querySelector(".categ")
             let selected = filtr.options[filtr.selectedIndex].text.toUpperCase()
-            resultados = data.filter(produ => produ.categoria.includes(categ)|| produ.nombre.includes(selected))
+            resultados = data.filter(produ => produ.categoria === categ )
+            resultados1 = resultados.filter(produ =>produ.nombre.includes(selected))
             const ocultar = document.querySelector(".ocultar").style.display = "none";
-            cargarProductos(resultados,filt)
+            cargarProductos(resultados1,filt)
         }); 
 }
 
