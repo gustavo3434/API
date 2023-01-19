@@ -207,9 +207,13 @@ carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALST
 function ShowSelected()
 {
     /* Para obtener el valor */
-    let fil = document.querySelector(".sub").value
+    //let fil = document.querySelector(".sub").value
     /* Para obtener el texto */
-    let filt = document.querySelector(".sub")
-    var selected = filt.options[filt.selectedIndex].text;
+    let filt = document.querySelector(".categ")
+    let selected = filt.options[filt.selectedIndex].text.toUpperCase()
+    if (selected =! "PRODUCTOS") {
+        filtrado(selected)
+    }
 }
 
+ShowSelected()

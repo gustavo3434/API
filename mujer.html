@@ -62,28 +62,22 @@
             <p class="sub-tit">Inicio> Mujer</p>
         </div>
         <div class="area-sub-menu">
-          <div class="dropdown">
-            <a class="sub btn form-select form-select-sm text-bg-light" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Productos
-            </a>
-          
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Remeras</a></li>
-              <li><a class="dropdown-item" href="#">Musculosas</a></li>
-              <li><a class="dropdown-item" href="#">Pantalones</a></li>
-              <li><a class="dropdown-item" href="#">Camisas</a></li>
-              <li><a class="dropdown-item" href="#">Camperas</a></li>
-              <li><a class="dropdown-item" href="#">Buzos</a></li>
-            </ul>
-          </div>
+          <select class="categ sub ord btn form-select form-select-sm mb-3 text-bg-light" id="MUJER">
+            <option selected>Productos</option>
+            <option value="1">Remeras</option>
+            <option value="2">Musculosas</option>
+            <option value="3">Pantalones</option>
+            <option value="4">Camisas</option>
+            <option value="5">Campera</option>
+            <option value="6">Buzos</option>
+          </select>
         </div>
         <div class="orden">
-          <select class="sub ord btn form-select form-select-sm mb-3 text-bg-light" aria-label=".form-select-lg example">
-              <option selected>Mas vendidos</option>
+          <select class="sub ord btn form-select form-select-sm mb-3 text-bg-light" id="MUJER">
               <option value="1">Precio:Menor a mayor</option>
               <option value="2">Precio: Mayor a menor</option>
               <option value="3">Mas nuevo al mas viejo</option>
-              <option value="3">Mas viejo al mas nuevo</option>
+              <option value="4">Mas viejo al mas nuevo</option>
           </select>
         </div>
       </div>                <!--------------------------->
