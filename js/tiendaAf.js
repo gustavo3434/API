@@ -200,7 +200,7 @@ function totalCarrito (array) { // FUNCION TOTAL DE CARRITO
     return total
 }
 
-carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
+carritoJS = JSON.parse(localStorage.getItem("listaProductos"))///DATOS DE LOCALSTORAGE
 
 
 
