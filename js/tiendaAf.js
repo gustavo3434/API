@@ -215,7 +215,7 @@ function ShowSelected()
                     let categ = (e.target.id)
                     let filtr = document.querySelector(".categ")
                     let selected = filtr.options[filtr.selectedIndex].text.toUpperCase()
-                    resultados = data.filter(produ => produ.categoria.includes(categ) || produ.nombre.includes(selected))
+                    resultados = data.filter(produ => produ.categoria === categ || produ.nombre.includes(selected))
                     const ocultar = document.querySelector(".ocultar").style.display = "none";
                     cargarProductos(resultados,filt)
                 });
