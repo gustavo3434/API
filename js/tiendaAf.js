@@ -208,23 +208,8 @@ function ShowSelected()
     let filtr = document.querySelector(".categ")
     let filt = document.querySelectorAll(".categ")
     let selected = filtr.options[filtr.selectedIndex].text.toUpperCase()
-    filt.forEach(el => {
-        el.addEventListener("click", (e) => {
-            let categ = (e.target.id)
-            let resultados =  []
-            fetch("./js/data.json")
-                .then((res) => res.json())
-                .then((data) => {
-                    resultados = data.filter(produ => produ.categoria  ===(categ) || produ.nombre.includes(selected))
-                    const ocultar = document.querySelector(".ocultar").style.display = "none";
-                    cargarProductos(resultados,filt)
-                        
-                }); 
-            
-        });
-    })
-    
-    
+    const ocultar = document.querySelector(".ocultar").style.display = "none";
+    filtrado(selected)
 }
 
 
