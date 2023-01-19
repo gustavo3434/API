@@ -209,16 +209,12 @@ function ShowSelected()
     fetch("./js/data.json")
         .then((res) => res.json())
         .then((data) => {
-            let filt = document.querySelectorAll(".categ")
-            filt.forEach(el => {
-                el.addEventListener("click", (e) => {
-                    let filtr = document.querySelector(".categ")
-                    let selected = filtr.options[filtr.selectedIndex].text.toUpperCase()
-                    resultados = data.filter(produ =>  produ.nombre.includes(selected))
-                    const ocultar = document.querySelector(".ocultar").style.display = "none";
-                    cargarProductos(resultados,filt)
-                });
-            })
+            let categ = document.getElementsByClassName("categ")[0].id
+            let filtr = document.querySelector(".categ")
+            let selected = filtr.options[filtr.selectedIndex].text.toUpperCase()
+            resultados = data.filter(produ => produ.categoria.includes(categ)|| produ.nombre.includes(selected))
+            const ocultar = document.querySelector(".ocultar").style.display = "none";
+            cargarProductos(resultados,filt)
         }); 
 }
 
