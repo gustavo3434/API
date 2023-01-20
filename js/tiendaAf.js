@@ -252,8 +252,8 @@ const ShowOrd = () =>
                     resultados = data.filter(produ => produ.categoria === categ )
                     resultados1 = resultados.sort((a, b) => b.precio - a.precio  );  
                     if (resultados1.length > 0) {
-                    const ocultar = document.querySelector(".ocultar").style.display = "none";
-                    cargarProductos(resultados1,filt)
+                        const ocultar = document.querySelector(".ocultar").style.display = "none";
+                        cargarProductos(resultados1,filt)
                     }
             })
             break;
@@ -278,8 +278,8 @@ const ShowOrd = () =>
                     resultados = data.filter(produ => produ.categoria === categ )
                     resultados1 = resultados.sort((a, b) => b.nombre - a.nombre  );  
                     if (resultados1.length > 0) {
-                    const ocultar = document.querySelector(".ocultar").style.display = "none";
-                    cargarProductos(resultados1,filt)
+                        const ocultar = document.querySelector(".ocultar").style.display = "none";
+                        cargarProductos(resultados1,filt)
                     }
             })
             break;
