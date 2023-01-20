@@ -220,4 +220,10 @@ function ShowSelected()
         }); 
 }
 
-ShowSelected()
+
+let filtr = document.querySelector(".categ")
+filt.forEach(el => {
+    el.addEventListener("change", () => {
+        ShowSelected()
+    });
+})
