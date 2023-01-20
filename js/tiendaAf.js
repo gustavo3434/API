@@ -203,7 +203,7 @@ function totalCarrito (array) { // FUNCION TOTAL DE CARRITO
 carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
 
 
-function ShowSelected()
+const ShowSelected = () =>
 {
     let resultados =  []
     let resultados1 = []
@@ -222,8 +222,73 @@ function ShowSelected()
         }); 
 }
 
-
 let filtr = document.querySelector(".categ")
 filtr.addEventListener("change", () => {
     ShowSelected()
+});
+
+const ShowOrd = () =>
+{   
+    let ord = document.querySelector(".ordenamiento").value
+    switch(ord) {
+        case "1":
+            fetch("./js/data.json")
+                .then((res) => res.json())
+                .then((data) => {
+                    let categ = document.getElementsByClassName("ordenamiento")[0].id
+                    resultados = data.filter(produ => produ.categoria === categ )
+                    resultados1 = resultados.sort((a, b) => a.precio - b.precio);  
+                    if (resultados1.length > 0) {
+                        const ocultar = document.querySelector(".ocultar").style.display = "none";
+                        cargarProductos(resultados1,filt)
+                    }
+            })
+            break;
+        case "2":
+            fetch("./js/data.json")
+                .then((res) => res.json())
+                .then((data) => {
+                    let categ = document.getElementsByClassName("ordenamiento")[0].id
+                    resultados = data.filter(produ => produ.categoria === categ )
+                    resultados1 = resultados.sort((a, b) => b.precio - a.precio  );  
+                    if (resultados1.length > 0) {
+                    const ocultar = document.querySelector(".ocultar").style.display = "none";
+                    cargarProductos(resultados1,filt)
+                    }
+            })
+            break;
+        case "3":
+            fetch("./js/data.json")
+                .then((res) => res.json())
+                .then((data) => {
+                    let categ = document.getElementsByClassName("ordenamiento")[0].id
+                    resultados = data.filter(produ => produ.categoria === categ )
+                    resultados1 = resultados.sort((a, b) => a.nombre - b.nombre);  
+                    if (resultados1.length > 0) {
+                        const ocultar = document.querySelector(".ocultar").style.display = "none";
+                        cargarProductos(resultados1,filt)
+                    }
+            })
+            break;
+        case "4":
+            fetch("./js/data.json")
+                .then((res) => res.json())
+                .then((data) => {
+                    let categ = document.getElementsByClassName("ordenamiento")[0].id
+                    resultados = data.filter(produ => produ.categoria === categ )
+                    resultados1 = resultados.sort((a, b) => b.nombre - a.nombre  );  
+                    if (resultados1.length > 0) {
+                    const ocultar = document.querySelector(".ocultar").style.display = "none";
+                    cargarProductos(resultados1,filt)
+                    }
+            })
+            break;
+        default:
+            break;
+    }
+}
+
+let orden = document.querySelector(".ordenamiento")
+orden.addEventListener("change", () => {
+    ShowOrd()
 });
