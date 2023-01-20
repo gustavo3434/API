@@ -263,7 +263,7 @@ const ShowOrd = () =>
                 .then((data) => {
                     let categ = document.getElementsByClassName("ordenamiento")[0].id
                     resultados = data.filter(produ => produ.categoria === categ )
-                    resultados1 = resultados.sort((a, b) => a.nombre - b.nombre);  
+                    resultados1 = resultados.sort((a, b) => a.nombre < b.nombre);  
                     if (resultados1.length > 0) {
                         const ocultar = document.querySelector(".ocultar").style.display = "none";
                         cargarProductos(resultados1,filt)
@@ -276,7 +276,7 @@ const ShowOrd = () =>
                 .then((data) => {
                     let categ = document.getElementsByClassName("ordenamiento")[0].id
                     resultados = data.filter(produ => produ.categoria === categ )
-                    resultados1 = resultados.sort((a, b) => b.nombre - a.nombre  );  
+                    resultados1 = resultados.sort((a, b) => b.nombre < a.nombre  );  
                     if (resultados1.length > 0) {
                         const ocultar = document.querySelector(".ocultar").style.display = "none";
                         cargarProductos(resultados1,filt)
