@@ -222,8 +222,6 @@ function ShowSelected()
 
 
 let filtr = document.querySelector(".categ")
-filt.forEach(el => {
-    el.addEventListener("change", () => {
-        ShowSelected()
-    });
-})
+filtr.addEventListener("change", () => {
+    ShowSelected()
+});
