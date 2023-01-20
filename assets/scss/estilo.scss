@@ -240,8 +240,12 @@ h2{
                             /*Responsive < 768px*/
 @media screen and (max-width:768px) 
 {      
+    
     main{
         margin-top: 3rem;
+    }
+    #buscador{
+        display: none;
     }
     /*Indice y filtros*/
     .indice{
@@ -356,6 +360,9 @@ h2{
                                 /*Responsive < 517px*/
 @media screen and (max-width:514px) 
 {
+    #buscador{
+        display: none;
+    }
     .galeria_{            
         div{
             box-shadow: 3px 5px 10px black;
@@ -371,7 +378,7 @@ h2{
     main{
         margin-top: 3rem;
     }
-    .buscador{
+    #buscador{
         display: none;
     }
     /* Galeria Principal Index*/
