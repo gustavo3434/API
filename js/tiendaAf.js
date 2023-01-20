@@ -215,8 +215,10 @@ function ShowSelected()
             let selected = filtr.options[filtr.selectedIndex].text.toUpperCase()
             resultados = data.filter(produ => produ.categoria === categ )
             resultados1 = resultados.filter(produ =>produ.nombre.includes(selected))
-            const ocultar = document.querySelector(".ocultar").style.display = "none";
-            cargarProductos(resultados1,filt)
+            if (resultados1.length > 0) {
+                const ocultar = document.querySelector(".ocultar").style.display = "none";
+                cargarProductos(resultados1,filt)
+            }
         }); 
 }
 
