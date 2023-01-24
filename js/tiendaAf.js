@@ -171,11 +171,13 @@ const cargarProductos = (array,para) => {
 
 
 let productosCarrito = []
+
 function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
     fetch("./js/data.json")
         .then((res) => res.json())
         .then((data) => {
             let productoEncontrado = data.find(prod => prod.id === parseInt(id))
+        carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
         if((productosCarrito.some((el) => el.id == productoEncontrado.id))){
             productosCarrito.map(el => el.cantidad += 1)
         } else{
@@ -184,7 +186,7 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
         if(carritoJS.length > 0) {
             guardarLocal("listaProductos",JSON.stringify(productosCarrito.concat(carritoJS)));
         }else {
-            guardarLocal("listaProductos",JSON.stringify(productosCarrito))
+            guardarLocal("listaProductos",JSON.stringify(productosCarrito));
         }
         
         }); 
