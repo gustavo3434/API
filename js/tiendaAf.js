@@ -183,11 +183,7 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
         } else{
             productosCarrito.push(productoEncontrado)
         }
-        if(carritoJS.length > 0) {
-            guardarLocal("listaProductos",JSON.stringify(productosCarrito.concat(carritoJS)));
-        }else {
-            guardarLocal("listaProductos",JSON.stringify(productosCarrito));
-        }
+        guardarLocal("listaProductos",JSON.stringify(productosCarrito.concat(carritoJS)));
         
         }); 
 }
