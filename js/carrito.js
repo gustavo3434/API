@@ -5,6 +5,7 @@ let agregar = document.querySelectorAll(".agregar")
 const totalcarrito = document.querySelector("#tot-carrito")
 let elementosCarrito = document.querySelector("#elementos_carrito")
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };// FUNCION PARA GUARDAR DATOS EN LOCALSTORAGE 
+let carritoJS = []
 
 carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
 
@@ -70,7 +71,7 @@ if (carritoJS) {
     div1.innerHTML = '<a class="btn btn-dark" href="./formulario_compra.html" role="button">COMPRAR</a>'
     comprar.append(div1)
 
-}else {
+}else if (carritoJS.length = 0){
     ocul = document.querySelector(".ocultarTot").style.display = "none"
     let carritoVacio = document.createElement(`h2`)
     carritoVacio.innerHTML = 

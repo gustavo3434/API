@@ -11,7 +11,6 @@ const contenedorAccesorios = document.querySelector("#contenedor_accesorios")
 const contenedorDeportes = document.querySelector("#contenedor_deportes")
 const contenedorCalzado = document.querySelector("#contenedor_calzado")
 let eliminar = document.querySelectorAll(".eliminar")
-let carritoJS = []
 let productos1 = []
 
   fetch("./js/data.json")
@@ -181,7 +180,12 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
             }else {
                 productosCarrito.push(productoEncontrado)
             }
-            guardarLocal("listaProductos",JSON.stringify(productosCarrito));
+            if (carritoJS) {
+                guardarLocal("listaProductos",JSON.stringify(productosCarrito.concat(carritoJS)));
+            }else {
+                guardarLocal("listaProductos",JSON.stringify(productosCarrito))
+            }
+            
         }); 
         
 }
@@ -202,7 +206,7 @@ function totalCarrito (array) { // FUNCION TOTAL DE CARRITO
     return total
 }
 
-carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
+let carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
 
 
 const ShowSelected = () =>
