@@ -180,10 +180,11 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
         if (carritoJS) {
             if ((productosCarrito.some((el) => el.id == productoEncontrado.id)) || (carritoJS.some((el) => el.id == productoEncontrado.id))){
                 productosCarrito.map(el => el.cantidad += 1)
+            }else {
+                productosCarrito.push(productoEncontrado)
             }
-        }else {
-            productosCarrito.push(productoEncontrado)
         }
+        
         /*if((productosCarrito.some((el) => el.id == productoEncontrado.id))){
             productosCarrito.map(el => el.cantidad += 1)
         } else{
