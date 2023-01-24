@@ -171,7 +171,6 @@ const cargarProductos = (array,para) => {
 
 
 let productosCarrito = []
-productosCarrito = productosCarrito.concat(carritoJS)
 function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
     fetch("./js/data.json")
         .then((res) => res.json())
@@ -182,9 +181,15 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
         } else{
             productosCarrito.push(productoEncontrado)
         }
-        guardarLocal("listaProductos",JSON.stringify(productosCarrito));
+        if(carritoJS.length > 0) {
+            guardarLocal("listaProductos",JSON.stringify(productosCarrito.concat(carritoJS)));
+        }else {
+            guardarLocal("listaProductos",JSON.stringify(productosCarrito))
+        }
+        
         }); 
 }
+guardarLocal("listaProductos",JSON.stringify(productosCarrito));
 
 buscar.addEventListener("click",(e) => {
     e.preventDefault()
