@@ -12,7 +12,7 @@ const contenedorDeportes = document.querySelector("#contenedor_deportes")
 const contenedorCalzado = document.querySelector("#contenedor_calzado")
 let eliminar = document.querySelectorAll(".eliminar")
 let productos1 = []
-
+let carritoJS = []
   fetch("./js/data.json")
   .then((res) => res.json())
   .then((data) => {
@@ -175,7 +175,7 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
         .then((res) => res.json())
         .then((data) => {
             let productoEncontrado = data.find(prod => prod.id === parseInt(id))
-            if ((productosCarrito.some((el) => el.id == productoEncontrado.id)) /*|| (carritoJS.length > 0 && carritoJS.some((el) => el.id == productoEncontrado.id))*/){
+            if ((productosCarrito.some((el) => el.id == productoEncontrado.id)) || (carritoJS.length > 0 && carritoJS.some((el) => el.id == productoEncontrado.id))){
                 productosCarrito.map(el => el.cantidad += 1)
             }else {
                 productosCarrito.push(productoEncontrado)
@@ -206,7 +206,7 @@ function totalCarrito (array) { // FUNCION TOTAL DE CARRITO
     return total
 }
 
-let carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
+carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
 
 
 const ShowSelected = () =>
