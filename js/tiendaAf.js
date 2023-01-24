@@ -171,6 +171,7 @@ const cargarProductos = (array,para) => {
 
 
 let productosCarrito = []
+productosCarrito = productosCarrito.concat(carritoJS)
 function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
     fetch("./js/data.json")
         .then((res) => res.json())
@@ -183,7 +184,6 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
         }
         guardarLocal("listaProductos",JSON.stringify(productosCarrito));
         }); 
-        productosCarrito = productosCarrito.concat(carritoJS)
 }
 
 buscar.addEventListener("click",(e) => {
