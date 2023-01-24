@@ -182,11 +182,7 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
                 productosCarrito.map(el => el.cantidad += 1)
             }
         }else {
-            if((productosCarrito.some((el) => el.id == productoEncontrado.id))){
-                productosCarrito.map(el => el.cantidad += 1)
-            } else{
-                productosCarrito.push(productoEncontrado)
-            }
+            productosCarrito.push(productoEncontrado)
         }
         /*if((productosCarrito.some((el) => el.id == productoEncontrado.id))){
             productosCarrito.map(el => el.cantidad += 1)
