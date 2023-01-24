@@ -177,19 +177,11 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
         .then((res) => res.json())
         .then((data) => {
             let productoEncontrado = data.find(prod => prod.id === parseInt(id))
-        if (carritoJS) {
-            if ((productosCarrito.some((el) => el.id == productoEncontrado.id)) || (carritoJS.some((el) => el.id == productoEncontrado.id))){
+        if ((productosCarrito.some((el) => el.id == productoEncontrado.id)) || ((carritoJS.length > 0) && (carritoJS.some((el) => el.id == productoEncontrado.id)))){
                 productosCarrito.map(el => el.cantidad += 1)
-            }else {
-                productosCarrito.push(productoEncontrado)
-            }
-        }
-        
-        /*if((productosCarrito.some((el) => el.id == productoEncontrado.id))){
-            productosCarrito.map(el => el.cantidad += 1)
-        } else{
+        }else {
             productosCarrito.push(productoEncontrado)
-        }*/
+        }
         guardarLocal("listaProductos",JSON.stringify(productosCarrito.concat(carritoJS)));
         
         }); 
