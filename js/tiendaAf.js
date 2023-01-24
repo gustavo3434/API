@@ -176,8 +176,6 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
         .then((res) => res.json())
         .then((data) => {
             let productoEncontrado = data.find(prod => prod.id === parseInt(id))
-        carritoJS = JSON.parse(localStorage.getItem("listaProductos"))
-        productosCarrito = productosCarrito.concat(carritoJS)
         if((productosCarrito.some((el) => el.id == productoEncontrado.id))){
             productosCarrito.map(el => el.cantidad += 1)
         } else{
@@ -185,6 +183,7 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
         }
         guardarLocal("listaProductos",JSON.stringify(productosCarrito));
         }); 
+        productosCarrito = productosCarrito.concat(carritoJS)
 }
 
 buscar.addEventListener("click",(e) => {
