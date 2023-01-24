@@ -4,7 +4,6 @@ let eliminar = document.querySelectorAll(".eliminar")
 let agregar = document.querySelectorAll(".agregar")
 const totalcarrito = document.querySelector("#tot-carrito")
 let elementosCarrito = document.querySelector("#elementos_carrito")
-let carritoJS = []
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };// FUNCION PARA GUARDAR DATOS EN LOCALSTORAGE 
 
 carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
@@ -62,7 +61,7 @@ function totalCarrito (array) { // FUNCION TOTAL DE CARRITO
 }
 
 
-if (carritoJS.length > 0) {
+if (carritoJS) {
     cargarCarrito(carritoJS,elementosCarrito)
     totalCarrito(carritoJS)
     totalcarrito.innerText = totalCarrito(carritoJS)
