@@ -16,7 +16,7 @@ let carritoJS = []
 
 
 const pedirPosts = async () => {
-    const resp = await fetch('https://jsonplaceholder.typicode.com/posts')
+    const resp = await fetch("./js/data.json")
     const data = await resp.json()
    
     let productosMujer = data.filter(produc => produc.categoria === "MUJER")
@@ -24,14 +24,18 @@ const pedirPosts = async () => {
         const div = document.createElement("div");
         div.setAttribute("class","contenedor");
         div.innerHTML = 
-        
             `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
             <img src="${produc.img}" >
             <a href="#" class="nombre_producto">${produc.nombre}</a>
             <a href="#" class="precio"><br>$${produc.precio}</a>`
         contenedorMujer.append(div) 
     })
-
+    let agregar1 = document.querySelectorAll(".agregar")
+    agregar1.forEach(el => {
+        el.addEventListener("click", (e) => {
+            agregarACarrito(e.target.id)
+        });
+    })
 }
 pedirPosts()
 
