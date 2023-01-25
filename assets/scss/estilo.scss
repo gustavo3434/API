@@ -54,6 +54,18 @@ body{
     height: 380px;
     width: 98%;
 }
+
+#buscador {
+    width: 200px;
+    margin-left: -29%;
+    .busc {
+        background-color: black;
+    }
+}
+#titulo {
+    margin-left: -24%;
+}
+
                         /* Indice con filtros */
 .indice{
     display: grid;

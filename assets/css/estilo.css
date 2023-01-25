@@ -337,6 +337,18 @@ body {
   width: 98%;
 }
 
+#buscador {
+  width: 200px;
+  margin-left: -29%;
+}
+#buscador .busc {
+  background-color: black;
+}
+
+#titulo {
+  margin-left: -24%;
+}
+
 /* Indice con filtros */
 .indice {
   display: grid;
