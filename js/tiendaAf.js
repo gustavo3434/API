@@ -29,7 +29,51 @@ const pedirPosts = async () => {
             <a href="#" class="nombre_producto">${produc.nombre}</a>
             <a href="#" class="precio"><br>$${produc.precio}</a>`
         contenedorMujer.append(div) 
-    })
+    });
+    let productosHombre = data.filter(produc => produc.categoria === "HOMBRE")
+    productosHombre.forEach((produc) => {
+        const div = document.createElement("div");
+        div.setAttribute("class","contenedor");
+        div.innerHTML = 
+            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
+            <img src="${produc.img}" >
+            <a href="#" class="nombre_producto">${produc.nombre}</a>
+            <a href="#" class="precio"><br>$${produc.precio}</a>`
+        contenedorHombre.append(div) 
+        });
+    let productosAccesorios = data.filter(produc => produc.categoria === "ACCESORIOS")
+    productosAccesorios.forEach((produc) => {
+        const div = document.createElement("div");
+        div.setAttribute("class","contenedor");
+        div.innerHTML = 
+            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
+            <img src="${produc.img}" >
+            <a href="#" class="nombre_producto">${produc.nombre}</a>
+            <a href="#" class="precio"><br>$${produc.precio}</a>`
+        contenedorAccesorios.append(div) 
+        });
+    let productosCalzado = data.filter(produc => produc.categoria ==="CALZADO")
+    productosCalzado.forEach((produc) => {
+        const div = document.createElement("div");
+        div.setAttribute("class","contenedor");
+        div.innerHTML = 
+            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
+            <img src="${produc.img}" >
+            <a href="#" class="nombre_producto">${produc.nombre}</a>
+            <a href="#" class="precio"><br>$${produc.precio}</a>`
+        contenedorCalzado.append(div) 
+        });
+    let productosDeportes = data.filter(produc => produc.categoria === "DEPORTES")
+    productosDeportes.forEach((produc) => {
+        const div = document.createElement("div");
+        div.setAttribute("class","contenedor");
+        div.innerHTML = 
+            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
+            <img src="${produc.img}" >
+            <a href="#" class="nombre_producto">${produc.nombre}</a>
+            <a href="#" class="precio"><br>$${produc.precio}</a>`
+        contenedorDeportes.append(div) 
+        });
     let agregar1 = document.querySelectorAll(".agregar")
     agregar1.forEach(el => {
         el.addEventListener("click", (e) => {
