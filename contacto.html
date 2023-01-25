@@ -66,19 +66,20 @@
             <legend class="ind">Formulario de contacto</legend>
               <div>
                 <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input class="nombre" type="text" name="nombre" placeholder="Nombre" required>
               </div>
               <div>
                 <label for="apellido">Apellido</label>
-                <input type="text" name="apellido" placeholder="Apellido" required>
+                <input class="apellido" type="text" name="apellido" placeholder="Apellido" required>
               </div>
               <div>
                 <label for="Mail">Mail</label>
-                <input type="email" name="email" placeholder="alguien@hotmail.com.ar" required>
+                <input class="email" type="email" name="email" placeholder="alguien@hotmail.com.ar" required>
               </div>
               <div>
                 <label for="motivo">Motivo de consulta</label >
-                <select name="motivo" id="" required>
+                <select class="motivo" name="motivo" id="" required>
+                  <option selected>Motivo</option>
                   <option value="1">Reclamos</option>
                   <option value="2">Opiniones</option>
                   <option value="2">Otros</option>
@@ -89,7 +90,7 @@
                 <textarea name="comen" id="" cols="30" rows="10" required></textarea>
               </div>
               <div>
-                <input type="submit" value="Enviar">
+                <input class="enviar" type="submit" value="Enviar">
               </div>
             </legend>
           </fieldset>
