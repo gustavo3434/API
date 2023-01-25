@@ -2,7 +2,7 @@ let enviar = document.querySelector(".enviar")
 const nombre = document.querySelector(".nombre")
 const apellido = document.querySelector(".apellido")
 let motivo = document.querySelector(".motivo")
-let selected = motivo.options[motivo.selectedIndex].text.
+let selected = motivo.options[motivo.selectedIndex].text
 
 enviar.addEventListener("click",(e) => {
   e.preventDefault()
