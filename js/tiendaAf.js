@@ -102,7 +102,9 @@ const armarCarrito = (prod) => {
             </div>`
 }
 
-
+while (carritoJS && carritoJS.length > 0) {
+    cant_prod.innerText = carritoJS.length
+}
 
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };// FUNCION PARA GUARDAR DATOS EN LOCALSTORAGE 
 
