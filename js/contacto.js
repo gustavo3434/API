@@ -1,4 +1,4 @@
-let enviar = document.querySelector(".enviar")
+const enviar = document.querySelector(".enviar")
 const nombre = document.querySelector(".nombre")
 const apellido = document.querySelector(".apellido")
 let motivo = document.querySelector(".motivo")
