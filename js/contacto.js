@@ -9,7 +9,7 @@ enviar.addEventListener("click",(e) => {
     text: nombre.value.trim().toUpperCase()+ " "+apellido.value.trim().toUpperCase()+" se envio con exito su Reclamo/Opinion, nos pondremos en contacto mediante el mail indicado",
   })
     function redireccionar(){window.location="./index.html";}
-    setTimeout (redireccionar, 2100);
+    setTimeout (redireccionar, 2900);
       
       
 })
