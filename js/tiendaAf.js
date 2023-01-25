@@ -13,7 +13,32 @@ const contenedorCalzado = document.querySelector("#contenedor_calzado")
 let eliminar = document.querySelectorAll(".eliminar")
 let productos1 = []
 let carritoJS = []
-  fetch("./js/data.json")
+
+
+const pedirPosts = async () => {
+    const resp = await fetch('https://jsonplaceholder.typicode.com/posts')
+    const data = await resp.json()
+   
+    let productosMujer = data.filter(produc => produc.categoria === "MUJER")
+    productosMujer.forEach((produc) => {
+        const div = document.createElement("div");
+        div.setAttribute("class","contenedor");
+        div.innerHTML = 
+        
+            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
+            <img src="${produc.img}" >
+            <a href="#" class="nombre_producto">${produc.nombre}</a>
+            <a href="#" class="precio"><br>$${produc.precio}</a>`
+        contenedorMujer.append(div) 
+    })
+
+}
+pedirPosts()
+
+
+
+
+  /*fetch("./js/data.json")
   .then((res) => res.json())
   .then((data) => {
     let productosMujer = data.filter(produc => produc.categoria === "MUJER")
@@ -79,7 +104,7 @@ let carritoJS = []
             agregarACarrito(e.target.id)
         });
     })
-  }); 
+  });*/
 
 const armarTabla = (prod) => {
     return `<div class="contenedor" id="espacio">
