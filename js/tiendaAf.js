@@ -103,7 +103,7 @@ const armarCarrito = (prod) => {
 }
 
 if (carritoJS && carritoJS.length > 0) {
-    cant_prod.innerText = totalCarrito(carritoJS)
+    cant_prod.innerText = carritoJS.length
 }else {
     cant_prod.innerText = 0
 }
