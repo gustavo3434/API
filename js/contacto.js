@@ -1,4 +1,4 @@
-const enviar = document.querySelector(".enviar")
+let enviar = document.querySelector(".enviar")
 const nombre = document.querySelector(".nombre")
 const apellido = document.querySelector(".apellido")
 let motivo = document.querySelector(".motivo")
@@ -12,6 +12,17 @@ enviar.addEventListener("click",(e) => {
     buttons: true,
     dangerMode: true,
   })
+  .then((will) => {
+    if (will) {
+      swal("La compra fue finalizada con exito, !GRACIAS POR ELEGIR TIENDA AF!", {
+       icon: "success",
+      })
+      setTimeout (redireccionar, 1900);
+      } else {
+      swal("La compra fue cancelada");
+      setTimeout (redireccionar, 1900);
+      }
+  });
       
 })
 
