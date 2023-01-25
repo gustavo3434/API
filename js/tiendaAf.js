@@ -10,6 +10,7 @@ const contenedorHombre = document.querySelector("#contenedor_hombre")
 const contenedorAccesorios = document.querySelector("#contenedor_accesorios")
 const contenedorDeportes = document.querySelector("#contenedor_deportes")
 const contenedorCalzado = document.querySelector("#contenedor_calzado")
+const cant_prod = document.querySelector("#cant_prod")
 let eliminar = document.querySelectorAll(".eliminar")
 let productos1 = []
 let carritoJS = []
@@ -24,7 +25,7 @@ const pedirPosts = async () => {
         const div = document.createElement("div");
         div.setAttribute("class","contenedor");
         div.innerHTML = 
-            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
+            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm"><i class="bi bi-cart-plus-fill"></i></button>
             <img src="${produc.img}" >
             <a href="#" class="nombre_producto">${produc.nombre}</a>
             <a href="#" class="precio"><br>$${produc.precio}</a>`
@@ -35,7 +36,7 @@ const pedirPosts = async () => {
         const div = document.createElement("div");
         div.setAttribute("class","contenedor");
         div.innerHTML = 
-            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
+            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm"><i class="bi bi-cart-plus-fill"></i></button>
             <img src="${produc.img}" >
             <a href="#" class="nombre_producto">${produc.nombre}</a>
             <a href="#" class="precio"><br>$${produc.precio}</a>`
@@ -46,7 +47,7 @@ const pedirPosts = async () => {
         const div = document.createElement("div");
         div.setAttribute("class","contenedor");
         div.innerHTML = 
-            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
+            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm"><i class="bi bi-cart-plus-fill"></i></button>
             <img src="${produc.img}" >
             <a href="#" class="nombre_producto">${produc.nombre}</a>
             <a href="#" class="precio"><br>$${produc.precio}</a>`
@@ -57,7 +58,7 @@ const pedirPosts = async () => {
         const div = document.createElement("div");
         div.setAttribute("class","contenedor");
         div.innerHTML = 
-            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
+            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm"><i class="bi bi-cart-plus-fill"></i></button>
             <img src="${produc.img}" >
             <a href="#" class="nombre_producto">${produc.nombre}</a>
             <a href="#" class="precio"><br>$${produc.precio}</a>`
@@ -68,7 +69,7 @@ const pedirPosts = async () => {
         const div = document.createElement("div");
         div.setAttribute("class","contenedor");
         div.innerHTML = 
-            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm">+</button>
+            `<button type="button" id="${produc.id}" class="agregar btn        btn-dark btn-sm"><i class="bi bi-cart-plus-fill"></i></button>
             <img src="${produc.img}" >
             <a href="#" class="nombre_producto">${produc.nombre}</a>
             <a href="#" class="precio"><br>$${produc.precio}</a>`
@@ -85,7 +86,7 @@ pedirPosts()
 
 const armarTabla = (prod) => {
     return `<div class="contenedor" id="espacio">
-                <button type="button" id="${prod.id}" class="agregar btn btn-dark btn-sm">+</button>
+                <button type="button" id="${prod.id}" class="agregar btn btn-dark btn-sm"><i class="bi bi-cart-plus-fill"></i></button>
                 <img src="${prod.img}" >
                 <a href="#" class="nombre_producto">${prod.nombre}</a>
                 <a href="#" class="precio"><br>$${prod.precio}</a>
@@ -101,7 +102,11 @@ const armarCarrito = (prod) => {
             </div>`
 }
 
-
+if (carritoJS && carritoJS.length > 0) {
+    cant_prod.innerText = totalCarrito(carritoJS)
+}else {
+    cant_prod.innerText = 0
+}
 
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };// FUNCION PARA GUARDAR DATOS EN LOCALSTORAGE 
 
