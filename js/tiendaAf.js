@@ -83,6 +83,7 @@ const pedirPosts = async () => {
         });
     })
     if (carritoJS) {
+        carritoJS = JSON.parse(localStorage.getItem("listaProductos"))
         cantidad.innerText = carritoJS.length
     }else {
         cantidad.innerText = productosCarrito.length
@@ -110,6 +111,7 @@ const armarCarrito = (prod) => {
 }
 
 if (carritoJS) {
+    carritoJS = JSON.parse(localStorage.getItem("listaProductos"))
     cantidad.innerText = carritoJS.length
 }else {
     cantidad.innerText = productosCarrito.length
