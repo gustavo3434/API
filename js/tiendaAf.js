@@ -81,7 +81,10 @@ const pedirPosts = async () => {
             agregarACarrito(e.target.id)
         });
     })
-    cantidad.innerText = carritoJS.length
+    if (carritoJS) {
+        cantidad.innerText = carritoJS.length
+    }
+    
 }
 pedirPosts()
 
