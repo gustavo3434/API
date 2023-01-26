@@ -10,7 +10,7 @@ const contenedorHombre = document.querySelector("#contenedor_hombre")
 const contenedorAccesorios = document.querySelector("#contenedor_accesorios")
 const contenedorDeportes = document.querySelector("#contenedor_deportes")
 const contenedorCalzado = document.querySelector("#contenedor_calzado")
-const cantidad = document.querySelector("#cantidad")
+const cantidad = document.querySelector("#cant_prod")
 let eliminar = document.querySelectorAll(".eliminar")
 let productos1 = []
 let carritoJS = []
@@ -81,6 +81,7 @@ const pedirPosts = async () => {
             agregarACarrito(e.target.id)
         });
     })
+    cantidad.innerText = carritoJS.length
 }
 pedirPosts()
 
@@ -102,9 +103,6 @@ const armarCarrito = (prod) => {
             </div>`
 }
 
-if (carritoJS) {
-    cantidad.innerText = carritoJS.length
-}
 
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };// FUNCION PARA GUARDAR DATOS EN LOCALSTORAGE 
 
@@ -200,9 +198,7 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
 buscar.addEventListener("click",(e) => {
     e.preventDefault()
     let parametro = inputSearch.value.trim().toUpperCase()
-    if (parametro =! "") {
-        const ocultar = document.querySelector(".ocultar").style.display = "none";
-    }
+    const ocultar = document.querySelector(".ocultar").style.display = "none";
     filtrado (parametro)
 })
 
