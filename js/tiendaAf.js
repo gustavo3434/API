@@ -107,9 +107,7 @@ const armarCarrito = (prod) => {
             </div>`
 }
 
-if (carritoJS) {
-    cantidad.innerText = carritoJS.length
-}
+
 
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };// FUNCION PARA GUARDAR DATOS EN LOCALSTORAGE 
 
@@ -177,6 +175,9 @@ const cargarProductos = (array,para) => {
             agregarACarrito(e.target.id)
         });
     })
+    if (carritoJS) {
+        cantidad.innerText = carritoJS.length
+    }
 }
 
 
