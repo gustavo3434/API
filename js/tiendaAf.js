@@ -102,7 +102,7 @@ const armarCarrito = (prod) => {
             </div>`
 }
 
-while (carritoJS && carritoJS.length > 0) {
+if (carritoJS) {
     cant_prod.innerText = carritoJS.length
 }
 
