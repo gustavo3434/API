@@ -175,9 +175,6 @@ const cargarProductos = (array,para) => {
             agregarACarrito(e.target.id)
         });
     })
-    if (carritoJS) {
-        cantidad.innerText = carritoJS.length
-    }
 }
 
 
@@ -194,6 +191,7 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
             }
             if (carritoJS) {
                 guardarLocal("listaProductos",JSON.stringify(productosCarrito.concat(carritoJS)));
+                cantidad.innerText = carritoJS.length
             }else {
                 guardarLocal("listaProductos",JSON.stringify(productosCarrito))
             }
