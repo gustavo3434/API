@@ -150,10 +150,12 @@ const filtrado = (parametro) => { //FUNCION DE FILTRADO DE PRODUCTOS
             .then((res) => res.json())
             .then((data) => {
                 resultados = data.filter(produ => produ.nombre.includes(parametro) || produ.color.includes(parametro))
+                if (resultados.length > 0) {
+                    const ocultar = document.querySelector(".ocultar").style.display = "none";
+                    cargarProductos(resultados,filt)
+                }
             }); 
-            if (resultados.length > 0) {
-                cargarProductos(resultados,filt)
-            }
+            
     } 
 }
 
@@ -199,7 +201,6 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
 buscar.addEventListener("click",(e) => {
     e.preventDefault()
     let parametro = inputSearch.value.trim().toUpperCase()
-    const ocultar = document.querySelector(".ocultar").style.display = "none";
     filtrado (parametro)
 })
 
