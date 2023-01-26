@@ -79,11 +79,12 @@ const pedirPosts = async () => {
     agregar1.forEach(el => {
         el.addEventListener("click", (e) => {
             agregarACarrito(e.target.id)
+            if (carritoJS) {
+                cantidad.innerText = carritoJS.length
+            }
         });
     })
-    if (carritoJS) {
-        cantidad.innerText = carritoJS.length
-    }
+    
     
 }
 pedirPosts()
