@@ -84,6 +84,8 @@ const pedirPosts = async () => {
     })
     if (carritoJS) {
         cantidad.innerText = carritoJS.length
+    }else {
+        cantidad.innerText = productosCarrito.length
     }
     
 }
@@ -107,7 +109,11 @@ const armarCarrito = (prod) => {
             </div>`
 }
 
-
+if (carritoJS) {
+    cantidad.innerText = carritoJS.length
+}else {
+    cantidad.innerText = productosCarrito.length
+}
 
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };// FUNCION PARA GUARDAR DATOS EN LOCALSTORAGE 
 
@@ -194,6 +200,7 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
                 cantidad.innerText = carritoJS.length
             }else {
                 guardarLocal("listaProductos",JSON.stringify(productosCarrito))
+                cantidad.innerText = productosCarrito.length
             }
             
         }); 
