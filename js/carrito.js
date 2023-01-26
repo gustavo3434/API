@@ -4,6 +4,7 @@ let eliminar = document.querySelectorAll(".eliminar")
 let agregar = document.querySelectorAll(".agregar")
 const totalcarrito = document.querySelector("#tot-carrito")
 let elementosCarrito = document.querySelector("#elementos_carrito")
+const cantidad = document.querySelector("#cant_prod")
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };// FUNCION PARA GUARDAR DATOS EN LOCALSTORAGE 
 let carritoJS = []
 
@@ -70,7 +71,7 @@ if (carritoJS) {
     const div1 = document.createElement("div");
     div1.innerHTML = '<a class="btn btn-dark" href="./formulario_compra.html" role="button">COMPRAR</a>'
     comprar.append(div1)
-
+    cantidad.innerText = carritoJS.length
 }
 
 if (carritoJS && carritoJS.length === 0) {
