@@ -33,6 +33,9 @@ const cargarCarrito = (array,para) => {
             eliminarDeCarrito(e.target.id)
         });
     })
+    if (carritoJS) {
+        cantidad.innerText = carritoJS.length
+    }
 }
 
 function eliminarDeCarrito(id){ //FUNCION PARA ELIMINAR PRODUCTOS AL CARRITO
