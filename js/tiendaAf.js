@@ -193,14 +193,10 @@ function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
             }
             if (carritoJS) {
                 guardarLocal("listaProductos",JSON.stringify(productosCarrito.concat(carritoJS)));
-            }else {
-                guardarLocal("listaProductos",JSON.stringify(productosCarrito))
-                //cantidad.innerText = productosCarrito.length
-            }
-            if (carritoJS && carritoJS.length > 0) {
                 cantidad.innerText = carritoJS.length
             }else {
-               cantidad.innerText = productosCarrito.length
+                guardarLocal("listaProductos",JSON.stringify(productosCarrito))
+                cantidad.innerText = productosCarrito.length
             }
             
         }); 
